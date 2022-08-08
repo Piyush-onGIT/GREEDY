@@ -1,96 +1,464 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 body {
-  background-color: black;
-    background-image: url(bg.jpg);
-    background-size: cover;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+  margin: 0;
+  font-family: 'Noto Sans', serif;
 }
-* {box-sizing: border-box;}
 
-/* NAV BAR */
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 
 #navbar {
-    background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: block;
-    transition: top 0.3s;
-  }
-  
-  #navbar a{
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 15px;
-    text-decoration: none;
-    font-size: 17px;
-    cursor: pointer;
-    font-family: 'Rubik', sans-serif;
-  }
-  
-  #navbar a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  /* LOGIN SIGNUP FORM */
-
-.form-popup {
-	display:none;
+  background-color: #a44dec;
   position: fixed;
-  /* border: 3px solid #f1f1f1; */
-  box-shadow: -2px 2.5px 6px #535353;
-  z-index: 9;
-    margin: 6% 33% 8% 37%;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 1;
+  box-shadow: -3px 3px 5px 0px #535353;
 }
 
-.form-container {
-  max-width: 300px;
-  padding: 10px;
-  background-color: white;
-  border-radius:2px;
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+  cursor: pointer;
   font-family: 'Rubik', sans-serif;
 }
 
-.form-container input[type=text], .form-container input[type=password] {
-  width: 100%;
+#navbar a:hover {
+  background-color: #9336e0;
+  color: white;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  box-shadow: -3px 3px 10px #535353;
+  z-index: 9;
+  margin: 6% 33% 8% 37%;
+  backdrop-filter: blur(5px);
+  animation: 0.5s ease-out 0s 1 slideInFromBottom;
+}
+
+.suf h1 {
+  margin: 2px 0 10px 0;
+  font-size: 1.75em;
+}
+
+.suf label {
+  font-size: 0.8em;
+}
+
+.form-container {
+  max-width: 310px;
+  padding: 5px 10px 0 10px;
+  background-color: white;
+  border-radius: 5px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.form-container input[type=text],
+.form-container input[type=password] {
+  width: 90%;
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin: 2px 0 10px 0;
   border: none;
-  border-radius:2px;
+  border-radius: 2px;
   background: #f1f1f1;
 }
 
-.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
 
 .form-container .btn {
-  background-color: #333;
+  background-color: rgb(60, 200, 60);
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   width: 100%;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   opacity: 0.8;
 }
 
 .form-container .cancel {
-  background-color: #333;
+  background-color: rgb(255, 80, 80);
 }
 
-.form-container .btn:hover, .open-button:hover {
+.form-container .btn:hover,
+.open-button:hover {
   opacity: 1;
 }
 
-@media (max-width: 1100px){
-  .form-popup{
+@media (max-width: 1100px) {
+  .form-popup {
     margin: 15% 25% 8% 30%;
+  }
+  .form-container input[type=text], .form-container input[type=password] {
+    width: 86%;
+  }
+}
+
+.container1 {
+  background-image: url(bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  padding: 5%;
+}
+
+.c1txt {
+  color: white;
+  width: 40%;
+  padding: 5% 10%;
+  font-size: 2.5em;
+  animation: 0.75s ease-out 0s 1 slideInFromRight;
+}
+
+.c1img {
+  width: 60%;
+}
+
+.c1img img {
+  width: 100%;
+  animation: fadeInAnimation ease 2s;
+  /* animation-iteration-count: 1;
+    animation-fill-mode: forwards; */
+}
+
+.c2txt {
+  width: 60%;
+  padding: 5%;
+  color: rgb(30, 30, 30);
+
+}
+
+.c2txt h1 {
+  font-size: 2.8em;
+}
+
+.c2txt p {
+  font-size: 1.2em;
+}
+
+.c2img {
+  width: 40%;
+}
+
+.c2img img {
+  width: 100%;
+  padding: 20% 0;
+}
+
+.c3txt {
+  padding-top: 2%;
+}
+
+.c3txt h1 {
+  text-align: center;
+  color: rgb(30, 30, 30);
+  font-size: 3em;
+  margin: 0;
+}
+
+.c5txt h1 {
+  text-align: center;
+  font-size: 3.5em;
+  padding: 30px;
+}
+
+.c5img img {
+  padding: 15% 0;
+}
+
+.c5t {
+  padding: 5%;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+}
+
+.mybtn {
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  padding: 17px 50px;
+  background: #04d2c8;
+  border-radius: 30px;
+  border: 1px solid transparent;
+  display: inline-block;
+  transition: .3s;
+  margin: 2% 0;
+}
+
+.mybtn:hover {
+  background: transparent;
+  color: #04d2c8;
+  border: 1px solid #04d2c8;
+  color: #04d2c8 !important;
+}
+
+.container2 {
+  display: flex;
+  padding: 5%;
+}
+
+.container3 {
+  padding: 0 5%;
+}
+
+.container5 {
+  padding-bottom: 5%;
+}
+
+.cardcontainer {
+  display: flex;
+  padding: 5%;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  margin: 3%;
+}
+
+.card2 {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  display: flex;
+  width: 70%;
+  background-color: white;
+  margin: 2% 6%;
+  padding: 1%;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 5px 8px 20px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 10px 15px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  /* 5px rounded corners */
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+.card img {
+  border-radius: 5px 5px 0 0;
+  width: 286px;
+  height: 180px;
+}
+
+.container4 {
+  background-image: url(bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1%;
+}
+
+.contactform {
+  width: 340px;
+  height: 440px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 40px -10px #000;
+  margin: calc(50vh - 220px) auto;
+  padding: 20px 30px;
+  max-width: calc(100vw - 40px);
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans serif;
+  position: relative
+}
+
+.contactform h2 {
+  margin: 10px 0;
+  padding-bottom: 10px;
+  width: 180px;
+  color: #78788c;
+  border-bottom: 3px solid #78788c
+}
+
+.contactform input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  resize: none;
+  border: 0;
+  font-family: 'Montserrat', sans-serif;
+  transition: all .3s;
+  border-bottom: 2px solid #bebed2
+}
+
+.contactform input:focus {
+  border-bottom: 2px solid #78788c
+}
+
+.contactform p:before {
+  content: attr(type);
+  display: block;
+  margin: 28px 0 0;
+  font-size: 14px;
+  color: #5a5a5a
+}
+
+.contactform div {
+  content: 'Hi';
+  position: absolute;
+  bottom: -15px;
+  right: -20px;
+  background: #50505a;
+  color: #fff;
+  width: 320px;
+  padding: 16px 4px 16px 0;
+  border-radius: 6px;
+  font-size: 13px;
+  box-shadow: 10px 10px 40px -14px #000
+}
+
+.contactform span {
+  margin: 0 5px 0 15px
+}
+
+.c5img img {
+  height: 100px;
+}
+
+.container5 {
+  display: flex;
+  flex-direction: column;
+  background-color: #04d2c8;
+}
+
+.heading {
+  color: white;
+}
+
+@media(max-width:1000px) {
+  .c1txt {
+    font-size: 1.5em;
+  }
+
+  .mybtn {
+    font-size: 15px;
+    padding: 15px 40px;
+  }
+
+  .container3 {
+    padding: 0;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card2 {
+    width: 50%;
+  }
+}
+
+@media(max-width:700px) {
+  .c1txt {
+    font-size: 1.2em;
+  }
+
+  .container2 {
+    flex-direction: column;
+  }
+
+  .c2img,
+  .c2txt {
+    width: 100%;
+  }
+
+  .c2txt h1 {
+    font-size: 2em;
+  }
+
+  .c2txt p {
+    font-size: 1em;
+  }
+
+  .mybtn {
+    font-size: 13px;
+    padding: 13px 30px;
+  }
+
+  .cardcontainer {
+    flex-direction: column;
+    padding: 0 10%;
+  }
+
+  .container3 {
+    padding: 0 10%;
+  }
+
+  .card {
+    margin: 5%;
+  }
+
+  .c3txt h1 {
+    font-size: 2.2em;
+    padding: 7% 0;
+  }
+
+  .c2img img {
+    padding: 5px 0;
+  }
+
+  .c2txt {
+    padding: 0;
   }
 }

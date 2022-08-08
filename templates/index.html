@@ -10,9 +10,46 @@
     <!-- <meta name="description" content="">
 <meta name="keywords" content=""> -->
     <link href="" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
+    {% if messages %} {% for msg in messages %}
+    <script>
+        console.log("{{msg}}");
+        if ("{{msg}}" == 1) {
+            swal({
+                "title": "Alert",
+                "text": "Username already exists",
+                "icon": "warning",
+                "button": "Go Back"
+            }).then(() => {
+                history.back();
+            });
+        }
+        else if ("{{msg}}" == 2) {
+            swal({
+                "title": "Alert",
+                "text": "Password doesn't match",
+                "icon": "warning",
+                "button": "Go Back"
+            }).then((value) => {
+                history.back();
+            });
+        }
+        else if ("{{msg}}" == 3) {
+            swal({
+                "title": "Alert",
+                "text": "User with this email already exists",
+                "icon": "warning",
+                "button": "Go Back"
+            }).then((value) => {
+                history.back();
+            });
+        }
+    </script>
+    {% endfor %} {% endif %}
+
     <form action="login" method="POST">
         <input type="text" class="input" placeholder="Username">
         <p></p>
@@ -23,17 +60,16 @@
     <p></p>
 
     <form action="signup" method="POST">
-        <input type="email" class="input" placeholder="xyz@exmaple.com">
+        {% csrf_token %}
+        <input type="email" class="input" name="email" placeholder="xyz@exmaple.com">
         <p></p>
-        <input type="text" class="input" placeholder="First Name">
+        <input type="text" class="input" name="name" placeholder="Full Name">
         <p></p>
-        <input type="text" class="input" placeholder="Last Name">
+        <input type="text" class="input" name="username" placeholder="Username">
         <p></p>
-        <input type="text" class="input" placeholder="Username">
+        <input type="password" class="passd" name="password" placeholder="Password">
         <p></p>
-        <input type="password" class="passd" placeholder="Password">
-        <p></p>
-        <input type="password" class="passd" placeholder="Re-type password">
+        <input type="password" class="passd" name="re-pswd" placeholder="Re-type password">
         <p></p>
         <input type="submit" class="sub" value="Submit">
     </form>

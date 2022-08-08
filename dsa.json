@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "dsa-bootcamp",
+  "private_key_id": "3d41a9071602c50a630ec400cf924b4f700858b0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDWDWAeBu4HeYlJ\nVlKgrnOh+nWZ6mQEDn5HE6kZKX+sBCDT0JSo0fq0sS7P9RIq6UZpZeY3zDHnvVSf\nI3ox1vqztahDTqR0LvQlHcLCpOagcghyYHYE+YY85EDohjvLT5Dq0KCgzQWTnHzV\nCq4JGjGqTXGFopxxwSlBw00h4UqmpxJFqTx/zpH0UPqsf6PooU7iLuP/zsoXHD/O\nixumVgB0wXexUcGeQuPFENmXWGUzGPqTv0IbQFnGzAD4uZTGoFPqVm57A8tHXUTR\nhomCs9/qEocTy6Ivm2jfLoHWF2xaatbNy5nuRCFYF4byNAOoYT49cjoPR6TUXEs1\nQoDE+crvAgMBAAECggEAPZRfgIPx2oimbEi/QKavcXwCdSMvXtNklMIdNbXwmuYd\nI5KwEdlGzNDkbMNOVLYDobLFBmxiNw8K1zV3o/r66NRr8eEgAqS3bC4hp6mVB7eG\nopEJoui+K6pm2f40GYtsX4FhlKEm545vg0KtSsUUYLAi5pUfeMJfQiITgJm1xjdn\nVS8n+w80WXFcydLjb/43awRDGRpR44zjZ4PzORCvv5frTQ4vJmeAuowPceDVZuxC\n4gURGiosoDvf3GMXg/N0bgHiW2R4CQVplhoTqveMXq7U8yURlTL/oD/TL/l675cV\nO9SWvQ7Tgk1I+xNFK2aIIisbGEUcPr7sGZQEcPfIEQKBgQD6cNhbNO1z/RjJJ7yX\ns1MEmstaUbz44DS+EWj62LT4ekSONnL9Hf9PCtDBx0ZXTQxriiFoX9S0/rrT+hAx\nVxKAIEheDCa7DMF7hBC2F5tgGG4H/mkklnUS2cYhuylhzFvCVWtMJK7rQmusPMl0\nP2+G4F+sZmRdz21GSlsCMk7YXQKBgQDazb+sqUH2qYC5XTojD8fnJH9l+neqhNTk\nVj9yVsugwSqCKkcuBXuPs/dzYj9qJqho7w8Fi5TUItfLM8sJPIO/SzRuRFplc5bj\n1zNE/3W1NF2Y0+lIiB1x3cRxKXMDEo2Pxf2Ve/Mb8fo8hRM5GVOls9+eXoEuzEwn\nJ5G8QhDLuwKBgD6ntLk8yJtYGrdYpaoeRwrD31Q9VtW84fUbTfRT+xKfJD+gB6yj\nsJgJ0KhqPoLg19afvDPspb6SbBNUYHC3o/1CFljRGW96hX1tUPD9fvXPpteBIrTw\nn2GT8inGNVguVFaOIEXwd4KMH3v7yTq4FCLeR5FOHJYLqv8G4zXteCRRAoGBANDK\niV9v3FxOf2FjDvkqM+3jrBZaHhr/yk9h5gVrwcBS1AeF5IqL/M6yQy090Zmv7gDE\nLqdx/ME5xoZHlDXqIyZF03BtlX0+AfzE/E2ZIG+b2rzdar0l9kMUBkKd9Pw3lhJe\nMo+UyfYewFVD/4X7HxD+RiNPtyI7HWg3oB/vQyvFAoGAWmu5M53SO8eIyoyvs8+O\nOFI8z8vnW1lFuwNlj5za1PDJuS/9CbB+4MK2XlsLwxRhSiJ6hgRix3htWJFwIVVU\nwzSUGATtpb8Jq/Zl8W4zFiGdFihbULGwv4v0aOfA99HtcNdkxMvf5xWIleoYam+o\nqcb39qdPlG/MyEar0PqeujE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "kicker@dsa-bootcamp.iam.gserviceaccount.com",
+  "client_id": "100435319463300326296",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/kicker%40dsa-bootcamp.iam.gserviceaccount.com"
+}

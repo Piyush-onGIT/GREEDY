@@ -19,5 +19,7 @@ from main import views as mv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", mv.home)
+    path("", mv.home),
+    path("edit", mv.edit),
+    path("signup", mv.signup)
 ]

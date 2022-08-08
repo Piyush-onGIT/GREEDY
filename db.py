@@ -25,12 +25,12 @@ def addUser(name, email, pswd):
     n = rows("users")
     n += 2
     dt = datetime.now()
-    dtf = dt.strftime("%d-%m-%Y %H:%M:%S")
+    dt.strftime("%d-%m-%Y %H:%M:%S")
     
     wks.update_cell(n, 1, name)
     wks.update_cell(n, 2, email)
     wks.update_cell(n, 3, pswd)
-    wks.update_cell(n, 4, dtf)
+    wks.update_cell(n, 4, str(dt))
 
 def check_username(username):
     wks = sheet.worksheet("users")
@@ -38,7 +38,7 @@ def check_username(username):
 
     for i in data:
         if i['username'] == username:
-            return True
+            return str(i['password'])
     return False
 
 def check_mail(mail):

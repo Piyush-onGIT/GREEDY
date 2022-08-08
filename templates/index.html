@@ -1,78 +1,132 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>DSA</title>
-    <meta name='viewport'
-        content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no' />
-    <!-- <meta name="description" content="">
-<meta name="keywords" content=""> -->
-    <link href="" rel="stylesheet">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link href="{% static 'styles.css' %}" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="C:\Users\HP\Desktop\DSA\static\styles.css"> -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-    {% if messages %} {% for msg in messages %}
-    <script>
-        console.log("{{msg}}");
-        if ("{{msg}}" == 1) {
-            swal({
-                "title": "Alert",
-                "text": "Username already exists",
-                "icon": "warning",
-                "button": "Go Back"
-            }).then(() => {
-                history.back();
-            });
-        }
-        else if ("{{msg}}" == 2) {
-            swal({
-                "title": "Alert",
-                "text": "Password doesn't match",
-                "icon": "warning",
-                "button": "Go Back"
-            }).then((value) => {
-                history.back();
-            });
-        }
-        else if ("{{msg}}" == 3) {
-            swal({
-                "title": "Alert",
-                "text": "User with this email already exists",
-                "icon": "warning",
-                "button": "Go Back"
-            }).then((value) => {
-                history.back();
-            });
-        }
-    </script>
-    {% endfor %} {% endif %}
+  {% if messages %} {% for msg in messages %}
+  <script>
+    console.log("{{msg}}");
+    if ("{{msg}}" == 1) {
+      swal({
+        "title": "Alert",
+        "text": "Username already exists",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then(() => {
+        history.back();
+      });
+    }
+    else if ("{{msg}}" == 2) {
+      swal({
+        "title": "Alert",
+        "text": "Password doesn't match",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then((value) => {
+        history.back();
+      });
+    }
+    else if ("{{msg}}" == 3) {
+      swal({
+        "title": "Alert",
+        "text": "User with this email already exists",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then((value) => {
+        history.back();
+      });
+    }
+    else if ("{{msg}}" == 4) {
+      swal({
+        "title": "Yayy",
+        "text": "Logged in",
+        "icon": "success",
+        "button": "Proceed"
+      }).then((value) => {
+        history.back();
+      });
+    } else if ("{{msg}}" == 5) {
+      swal({
+        "title": "Alert",
+        "text": "Wrong password",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then((value) => {
+        history.back();
+      });
+    } else if ("{{msg}}" == 6) {
+      swal({
+        "title": "Alert",
+        "text": "No such account exists",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then((value) => {
+        history.back();
+      });
+    }
+  </script>
+  {% endfor %} {% endif %}
 
-    <form action="login" method="POST">
-        <input type="text" class="input" placeholder="Username">
-        <p></p>
-        <input type="password" class="passd" placeholder="Password">
-        <p></p>
-        <input type="submit" class="sub" value="Submit">
-    </form>
-    <p></p>
+  <div id="navbar">
+    <a href="index1.html">Home</a>
+    <div style="float: right;">
+      <a class="open-button" onclick="openForm1()">Log In</a>
+      <a class="open-button" onclick="openForm2()">Sign Up</a>
+    </div>
+  </div>
 
-    <form action="signup" method="POST">
-        {% csrf_token %}
-        <input type="email" class="input" name="email" placeholder="xyz@exmaple.com">
-        <p></p>
-        <input type="text" class="input" name="name" placeholder="Full Name">
-        <p></p>
-        <input type="text" class="input" name="username" placeholder="Username">
-        <p></p>
-        <input type="password" class="passd" name="password" placeholder="Password">
-        <p></p>
-        <input type="password" class="passd" name="re-pswd" placeholder="Re-type password">
-        <p></p>
-        <input type="submit" class="sub" value="Submit">
+  <div class="form-popup" id="myForm1">
+    <form action="login" class="form-container" method="POST">
+      {% csrf_token %}
+      <h1>Log In</h1>
+
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="usnm" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="passd" required>
+
+      <input type="submit" class="btn" value="Log In">
+      <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
     </form>
+  </div>
+
+  <div class="form-popup suf" id="myForm2">
+    <form action="signup" class="form-container" method="POST">
+      {% csrf_token %}
+      <h1>Sign Up</h1>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="xyz@exmaple.com" name="email" required>
+
+      <label for="username"><b>Name</b></label>
+      <input type="text" placeholder="Full Name" name="name" required>
+
+      <label for="username"><b>Username</b></label>
+      <input type="text" placeholder="Username" name="usnm" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required>
+
+      <label for="psw"><b>Re-Enter Password</b></label>
+      <input type="password" placeholder="Enter Password Again" name="re-pswd" required>
+
+      <input type="submit" class="btn" value="Submit">
+      <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
+    </form>
+  </div>
+
+  <script src="{% static 'index.js' %}"></script>
 </body>
 
 </html>

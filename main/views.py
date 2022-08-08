@@ -1,4 +1,5 @@
 from http.client import HTTPResponse
+import re
 from django.shortcuts import render
 from flask import request
 import db
@@ -18,7 +19,8 @@ def edit(request):
 
 def signup(request):
     d = request.POST
-    usnm = d['username']
+    print(d)
+    usnm = d['usnm']
     mail = d['email']
     passd = d['password']
     repass = d['re-pswd']
@@ -43,4 +45,27 @@ def signup(request):
 
     db.addUser(usnm, mail, passd)
         
+    return render(request, "index.html")
+
+def login(request):
+    data = request.POST
+    usnm = data['usnm']
+    passd = data['passd']
+
+    check = db.check_username(usnm)
+
+    if check:
+        if check == passd:
+            # logged in
+            messages.info(request, 4)
+            return render(request, "index.html")
+        else:
+            # wrong password
+            messages.info(request, 5)
+            return render(request, "index.html")
+    else:
+        # no account
+        messages.info(request, 6)
+        return render(request, "index.html")
+
     return render(request, "index.html")

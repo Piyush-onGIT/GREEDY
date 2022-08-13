@@ -23,7 +23,7 @@ def signup(request):
     usnm = d['usnm']
     mail = d['email']
     passd = d['password']
-    repass = d['re-pswd']
+    repass = d['re-passd']
 
     if (passd != repass):
         # unmatched password

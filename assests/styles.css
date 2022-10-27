@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+body {
+  background-color: black;
+    background-image: url(bg.jpg);
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+* {box-sizing: border-box;}
+
+/* NAV BAR */
+
+#navbar {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+  }
+  
+  #navbar a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 17px;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+
+  /* LOGIN SIGNUP FORM */
+
+.form-popup {
+	display:none;
+  position: fixed;
+  /* border: 3px solid #f1f1f1; */
+  box-shadow: -2px 2.5px 6px #535353;
+  z-index: 9;
+    margin: 6% 33% 8% 37%;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+  border-radius:2px;
+  font-family: 'Rubik', sans-serif;
+}
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  border-radius:2px;
+  background: #f1f1f1;
+}
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.form-container .btn {
+  background-color: #333;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .cancel {
+  background-color: #333;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+@media (max-width: 1100px){
+  .form-popup{
+    margin: 15% 25% 8% 30%;
+  }
+}

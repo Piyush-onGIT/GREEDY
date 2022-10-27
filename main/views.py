@@ -20,7 +20,10 @@ def edit(request):
 def signup(request):
     d = request.POST
     print(d)
+<<<<<<< HEAD
     fname = d['fname']
+=======
+>>>>>>> 55cf727ed66b77200909d121b1bb530cf65d677d
     usnm = d['usnm']
     mail = d['email']
     passd = d['password']
@@ -44,7 +47,11 @@ def signup(request):
         messages.info(request, 3)
         return render(request, "index.html")
 
+<<<<<<< HEAD
     db.addUser(usnm, fname, mail, passd)
+=======
+    db.addUser(usnm, mail, passd)
+>>>>>>> 55cf727ed66b77200909d121b1bb530cf65d677d
         
     return render(request, "index.html")
 

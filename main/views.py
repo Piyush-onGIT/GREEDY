@@ -20,6 +20,7 @@ def edit(request):
 def signup(request):
     d = request.POST
     print(d)
+    fname = d['fname']
     usnm = d['usnm']
     mail = d['email']
     passd = d['password']
@@ -43,7 +44,7 @@ def signup(request):
         messages.info(request, 3)
         return render(request, "index.html")
 
-    db.addUser(usnm, mail, passd)
+    db.addUser(usnm, fname, mail, passd)
         
     return render(request, "index.html")
 

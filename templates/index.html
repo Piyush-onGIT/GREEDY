@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>home</title>
+  <title>DBugger</title>
   <link rel="stylesheet" href="{% static 'styles.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -79,7 +79,8 @@
   </script>
   {% endfor %} {% endif %}
   <div id="navbar">
-      <img class="navLogo" src="{% static 'images/dbugger_logo2.png' %}" alt="">
+      <!-- <a href="" style="text-decoration: none;"> -->
+        <img src="{% static 'images/dbugger_logo2.png' %}" alt="">
       <!-- <img class="navLogo" src="../static/images/dbugger_logo2.png"> -->
     
     <div style="float: right;">
@@ -91,7 +92,7 @@
  
   <div class="form-popup" id="myForm1">
     
-    <form action="login" class="form-container" method="POST">
+    <form action="welcome" class="form-container" method="POST">
       {% csrf_token %}
       <h1>Log In</h1>
 

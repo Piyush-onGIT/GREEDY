@@ -57,8 +57,8 @@ def login(request):
     if check:
         if check == passd:
             # logged in
-            messages.info(request, 4)
-            return render(request, "index.html")
+            # messages.info(request, 4)
+            return render(request, "afterLog.html")
         else:
             # wrong password
             messages.info(request, 5)

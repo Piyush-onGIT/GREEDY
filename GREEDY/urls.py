@@ -22,5 +22,5 @@ urlpatterns = [
     path("", mv.home),
     path("edit", mv.edit),
     path("signup", mv.signup),
-    path("login", mv.login)
+    path("welcome", mv.login)
 ]

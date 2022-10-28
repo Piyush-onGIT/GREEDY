@@ -53,13 +53,13 @@ body {
  align-items: center;
  justify-content: center;
 }
-.navLogo {
+#navbar img {
   margin-top: 15px;
   margin-left: 15px;
   width: 50px;
   height: 25px;
 }
-.navLogo:hover{
+#navbar img:hover{
   cursor: pointer;
 }
 #navbar a {
@@ -94,13 +94,13 @@ body {
  align-items: center;
  justify-content: center;
 }
-.navLogo{
+#navbar img{
   margin-top: 7px;
   margin-left: 15px;
   width: 150px;
   height: 39px;
 }
-.navLogo:hover{
+#navbar img:hover{
   cursor: pointer;
 }
 #navbar a {

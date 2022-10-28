@@ -79,8 +79,10 @@
   </script>
   {% endfor %} {% endif %}
   <div id="navbar">
-    <a href="index.html">Home</a>
+      <img src="{% static 'images/dbugger_logo2.png' %}" alt="">
+    
     <div style="float: right;">
+      <a class="open-button" >About Us</a>
       <a class="open-button" onclick="openForm1()">Log In</a>
       <a class="open-button" onclick="openForm2()">Sign Up</a>
     </div>

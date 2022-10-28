@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>home</title>
   <link rel="stylesheet" href="{% static 'styles.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
@@ -84,7 +85,7 @@
       <a class="open-button" onclick="openForm2()">Sign Up</a>
     </div>
   </div>
-
+ 
   <div class="form-popup" id="myForm1">
     <form action="login" class="form-container" method="POST">
       {% csrf_token %}
@@ -126,10 +127,10 @@
     </form>
   </div>
 
-  <div class="mycontainer" id="mycontainer">
+  <div class="mycontainer " id="mycontainer">
     <div class="container1" style="background-image: url('{% static "images/bg.png"%}')";>
-      <iframe src="https://drive.google.com/file/d/1HUIy5dHYfVOGue-IG39B_tgTAU63HiRz/preview" width="640" height="480" allow="autoplay"></iframe>
-      <div class="c1img">
+     
+      <div class="c1img ">
         
         <img
           src="https://preview.colorlib.com/theme/edumark/img/banner/xedu_ilastration.png.pagespeed.ic.tbBI6STZK1.webp"
@@ -141,9 +142,13 @@
         <button class="mybtn">Get Started</button>
       </div>
     </div>
-    
+   
       <!-- <iframe src="Introvideo.mp4" frameborder="0"></iframe> -->
-      
+      <div class="trailercontainer active">
+        <iframe src="https://drive.google.com/file/d/1HUIy5dHYfVOGue-IG39B_tgTAU63HiRz/preview" width="90%" height="300" allow="autoplay"></iframe>
+        <i class="fas fa-times fa-2x close-icon"></i>
+       
+    </div>
     
     <div class="container2">
       <div class="c2txt">
@@ -159,7 +164,7 @@
       </div>
     </div>
     <hr>
-    <div class="container3" id="ourcourses">
+    <div class="container3 " id="ourcourses">
       <div class="c3txt">
         <h1>Our Courses</h1>
       </div>
@@ -190,7 +195,7 @@
         </div>
       </div>
     </div>
-    <div class="container5">
+    <div class="container5 ">
       <div class="c5txt">
         <h1 class="heading">Features</h1>
       </div>
@@ -235,7 +240,7 @@
         </div>
       </div>
     </div>
-    <div class="container4" style="background-image: url('{% static "images/bg.png"%}')";>
+    <div class="container4 " style="background-image: url('{% static "images/bg.png"%}')";>
       <form class="contactform">
         <h2>CONTACT US</h2>
         <p type="Name:"><input placeholder="Write your name here.."></input></p>
@@ -245,6 +250,7 @@
       </form>
     </div>
   </div>
+
   <script src="{% static 'index.js' %}"></script>
   <!-- <script src=index.js></script> -->
 </body>

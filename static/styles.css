@@ -53,13 +53,13 @@ body {
  align-items: center;
  justify-content: center;
 }
-#navbar img{
+.navLogo {
   margin-top: 15px;
   margin-left: 15px;
   width: 50px;
   height: 25px;
 }
-#navbar img:hover{
+.navLogo:hover{
   cursor: pointer;
 }
 #navbar a {
@@ -94,13 +94,13 @@ body {
  align-items: center;
  justify-content: center;
 }
-#navbar img{
+.navLogo{
   margin-top: 7px;
   margin-left: 15px;
   width: 150px;
   height: 39px;
 }
-#navbar img:hover{
+.navLogo:hover{
   cursor: pointer;
 }
 #navbar a {
@@ -575,11 +575,7 @@ body {
   position:relative;
   left:49%;
   transform: translateX(-50%);
-<<<<<<< HEAD
-  
-=======
  
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6
   width: 100%;
   height: 100%;
   display: flex;
@@ -590,24 +586,15 @@ body {
   position: fixed;
   width: 250px;
   height: 200px;
-<<<<<<< HEAD
- outline: none;
-margin-bottom: 200px;
-=======
   outline: none;
   margin-bottom: 200px;
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6
 
 }
 .close-icon{
   position:absolute;
   margin-bottom: 400px;
   right:2%;
-<<<<<<< HEAD
-color: white;
-=======
   color: white;
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6
   cursor: pointer;
 }
 .active2{
@@ -680,8 +667,4 @@ color: white;
   color: white;
     cursor: pointer;
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6

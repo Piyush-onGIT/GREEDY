@@ -7,16 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>home</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="{% static 'styles.css' %}">
-<<<<<<< HEAD
-  <!-- <link rel="stylesheet" href="../static/styles.css"> -->
-=======
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <!-- <script src="{% static 'index.js' %}"></script> -->
-  <!-- <script src="../static/index.js"></script> -->
+  <!-- <link rel="stylesheet" href="styles.css"> -->
 </head>
 
 <!-- <body id="bg" style="background-image: url('{% static "images/bg.png" %}')"> -->
@@ -85,7 +79,8 @@
   </script>
   {% endfor %} {% endif %}
   <div id="navbar">
-      <img src="{% static 'images/dbugger_logo2.png' %}" alt="">
+      <img class="navLogo" src="{% static 'images/dbugger_logo2.png' %}" alt="">
+      <!-- <img class="navLogo" src="../static/images/dbugger_logo2.png"> -->
     
     <div style="float: right;">
       <a class="open-button" >About Us</a>
@@ -139,12 +134,8 @@
 
   <div class="mycontainer " id="mycontainer">
     <div class="container1" style="background-image: url('{% static "images/bg.png"%}')";>
-<<<<<<< HEAD
-      <div class="c1img">
-=======
      
       <div class="c1img ">
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6
         
         <img
           src="https://preview.colorlib.com/theme/edumark/img/banner/xedu_ilastration.png.pagespeed.ic.tbBI6STZK1.webp"
@@ -153,24 +144,16 @@
       
       <div class="c1txt">
         <h2>Let's <br> Learn <br> Coding</h2>
-        <button class="mybtn" id="getStart">Get Started</button>
+        <button class="mybtn">Get Started</button>
       </div>
     </div>
    
       <!-- <iframe src="Introvideo.mp4" frameborder="0"></iframe> -->
-<<<<<<< HEAD
-	<div class="trailercontainer active">
-=======
       <div class="trailercontainer active">
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6
         <iframe src="https://drive.google.com/file/d/1HUIy5dHYfVOGue-IG39B_tgTAU63HiRz/preview" width="90%" height="300" allow="autoplay"></iframe>
         <i class="fas fa-times fa-2x close-icon"></i>
        
     </div>
-<<<<<<< HEAD
-      
-=======
->>>>>>> df7d866637a6c2681d04629e47ec892f80ce60e6
     
     <div class="container2">
       <div class="c2txt">
@@ -274,6 +257,7 @@
   </div>
 
   <script src="{% static 'index.js' %}"></script>
+  <!-- <script src=index.js></script> -->
 </body>
 
 </html>

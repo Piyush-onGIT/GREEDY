@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>you are now logged in</title>
+	<link rel="stylesheet" href="{% static 'afterLog.css' %}">
+</head>
+
+<body>
+	<div id="navbar">
+		<!-- <a href="" style="text-decoration: none;"> -->
+		<img src="{% static 'images/dbugger_logo2.png' %}" alt="">
+		<!-- <img class="navLogo" src="../static/images/dbugger_logo2.png"> -->
+
+		<div style="float: right;">
+
+			<a class="open-button">Log Out</a>
+
+		</div>
+	</div>
+
+	<div class="container3 " id="ourcourses">
+		<div class="c3txt">
+			<h1>My Courses</h1>
+		</div>
+		<div class="cardcontainer">
+			{% for course, image in data %}
+				<div class="card">
+					<img src="{{image}}" alt="DSA" style="width:100%">
+					<div class="container">
+						<h3><b>{{course}}</b></h3>
+						<p>Description</p>
+						<button class="mybtn">View</button>
+					</div>
+				</div>
+				<p></p>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+
+</html>

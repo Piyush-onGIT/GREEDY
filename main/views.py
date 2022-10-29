@@ -1,3 +1,4 @@
+from email.mime import image
 from http.client import HTTPResponse
 import re
 from django.shortcuts import render, redirect
@@ -57,7 +58,19 @@ def login(request):
         if check == passd:
             # logged in
             # messages.info(request, 4)
-            return render(request, "afterLog.html")
+            enrolled = db.getEnCourses(usnm)
+            name = []
+            image = []
+
+            for i in enrolled:
+                details = db.getDetails(i)
+                name.append(details[0])
+                image.append(details[1])
+
+            final = zip(name, image)
+            context = {"data": final}
+
+            return render(request, "afterLog.html", context)
         else:
             # wrong password
             messages.info(request, 5)

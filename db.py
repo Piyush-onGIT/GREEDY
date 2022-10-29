@@ -63,3 +63,29 @@ def enroll(course, usnm):
             count += 1
 
     wks.update_cell(count + 1, course, usnm)
+
+def getEnCourses(username):
+    wks = sheet.worksheet("enrolled")
+    data = list(wks.get_all_values())
+    all = []
+
+    for i in data:
+        if username in i:
+            col = 0
+            for j in i:
+                col += 1
+                if j == username:
+                    all.append(col)
+    return all
+
+def getDetails(course):
+    wks = sheet.worksheet("courses")
+    data = list(wks.get_all_values())
+
+    details = []
+    for i in data:
+        if i[0] == str(course):
+            details.append(i[1])
+            details.append(i[2])
+
+    return details

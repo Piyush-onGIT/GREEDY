@@ -5,8 +5,7 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  
 
   font-family: 'Noto Sans', serif;
 }
@@ -272,10 +271,11 @@ body {
 }
 
 .c3txt h1 {
-  text-align: center;
+  text-align: left;
   color: rgb(40, 40, 40);
   font-size: 3em;
   margin-left: 5%;
+  margin-top: 40px;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -331,7 +331,8 @@ body {
 
 .cardcontainer {
   display: flex;
-  padding: 5%;
+  margin-left: 5%;
+ align-items: center;
 }
 
 .card {
@@ -683,6 +684,10 @@ header{
   margin-top: 50px;
   text-align: left;
 
+}
+.course-enrolled{
+	margin-top: 60px;
+	margin-left: 40px;
 }
 
 

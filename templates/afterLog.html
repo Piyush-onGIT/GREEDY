@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>you are now logged in</title>
+	<link rel="stylesheet" href="{% static 'afterLog.css' %}">
+</head>
+
+<body>
+	<div id="navbar">
+		<!-- <a href="" style="text-decoration: none;"> -->
+		<img src="{% static 'images/dbugger_logo2.png' %}" alt="">
+		<!-- <img class="navLogo" src="../static/images/dbugger_logo2.png"> -->
+
+		<div style="float: right;">
+
+			<a class="open-button" >Log Out</a>
+
+		</div>
+	</div>
+
+	
+	<div class="container3 " id="ourcourses">
+      <div class="c3txt">
+        <h1>My Courses</h1>
+      </div>
+      <div class="cardcontainer">
+        <div class="card">
+          <img src="{% static 'images/oops.png' %}" alt="DSA" style="width:100%">
+          <div class="container">
+            <h3><b>Introduction to programming with C++</b></h3>
+            <p>Description</p>
+            <button class="mybtn">Enroll Now</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/dsa.png' %}" alt="OOPs" style="width:100%">
+          <div class="container">
+            <h3><b>DSA Course (Upcoming)</b></h3>
+            <p>Description</p>
+            <button class="mybtn">Enroll Now</button>
+          </div>
+        </div>
+        <div class="card">
+          <img src="{% static 'images/dev.jpg' %}" alt="WebDev" style="width:100%">
+          <div class="container">
+            <h3><b>Web-Dev Course</b></h3>
+            <p>Descripton</p>
+            <button class="mybtn">Enroll Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

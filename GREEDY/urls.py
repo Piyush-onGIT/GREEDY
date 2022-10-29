@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from db import enroll
 from main import views as mv
 
 urlpatterns = [
@@ -22,5 +23,6 @@ urlpatterns = [
     path("", mv.home),
     path("edit", mv.edit),
     path("signup", mv.signup),
-    path("welcome", mv.login)
+    path("welcome", mv.login),
+    path("enroll", mv.enroll)
 ]

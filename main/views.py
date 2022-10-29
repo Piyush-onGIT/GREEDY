@@ -1,6 +1,6 @@
 from http.client import HTTPResponse
 import re
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from flask import request
 import db
 import gspread
@@ -13,7 +13,6 @@ def home(request):
 
 def edit(request):
     x = db.rows("users")
-    print(x)
     db.addUser("piyush", "xyz", "abcd")
     return render(request, "index.html")
 
@@ -69,3 +68,17 @@ def login(request):
         return render(request, "index.html")
 
     return render(request, "index.html")
+
+def enroll(request):
+    data = request.POST
+    course = data["course"]
+    usnm = data["usnm"]
+    pswd = data["passd"]
+
+    pwd = db.check_username(usnm)
+    if pwd:
+        if (pwd == pswd):
+            db.enroll(course, usnm)
+
+    response = redirect('/')
+    return response

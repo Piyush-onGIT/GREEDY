@@ -10,6 +10,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name("dsa.json", scope)
 opener = gspread.authorize(creds)
 sheet = opener.open("DSA-BOOTCAMP")
 
+
 def rows(work):
     wks = sheet.worksheet(work)
     return len(wks.get_all_records())
@@ -49,3 +50,16 @@ def check_mail(mail):
     return False
 
     print(data)
+
+def enroll(course, usnm):
+    wks = sheet.worksheet("enrolled")
+    n = rows("enrolled")
+    data = list(wks.get_all_values())
+    count = 1
+    data.pop(0)
+
+    for i in data:
+        if i[int(course) - 1] != '':
+            count += 1
+
+    wks.update_cell(count + 1, course, usnm)

@@ -11,13 +11,28 @@ function closeForm1() {
 }
 function openForm2() {
     document.getElementById("myForm1").style.display = "none";
-  document.getElementById("myForm2").style.display = "block";
-  document.getElementById("mycontainer").style.filter = "blur(5px)";
+	document.getElementById("myForm2").style.display = "block";
+	document.getElementById("mycontainer").style.filter = "blur(5px)";
 }
 
 function closeForm2() {
   document.getElementById("myForm2").style.display = "none";
   document.getElementById("mycontainer").style.filter = "blur(0)";
+}
+
+function openEnrollForm(course) {
+	document.getElementById("myForm1").style.display = "none";
+	document.getElementById("myForm2").style.display = "none";
+
+	document.getElementById("courseName").value = course;
+	document.getElementById("enroll").style.display = "none";
+	document.getElementById("enroll").style.display = "block";
+	document.getElementById("mycontainer").style.filter = "blur(5px)";
+}
+
+function closeEnrollForm() {
+	document.getElementById("enroll").style.display = "none";
+  	document.getElementById("mycontainer").style.filter = "blur(0)";
 }
 const btnE1 = document.querySelector(".mybtn");
 const closeIconE1 = document.querySelector(".close-icon");

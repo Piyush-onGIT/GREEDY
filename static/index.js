@@ -10,7 +10,7 @@ function closeForm1() {
 	document.getElementById("mycontainer").style.filter = "blur(0)";
 }
 function openForm2() {
-	document.getElementById("myForm1").style.display = "none";
+    document.getElementById("myForm1").style.display = "none";
 	document.getElementById("myForm2").style.display = "block";
 	document.getElementById("mycontainer").style.filter = "blur(5px)";
 }
@@ -32,13 +32,8 @@ function openEnrollForm(course) {
 
 function closeEnrollForm() {
 	document.getElementById("enroll").style.display = "none";
-	document.getElementById("mycontainer").style.filter = "blur(0)";
+  	document.getElementById("mycontainer").style.filter = "blur(0)";
 }
-
-function viewCourse(course) {
-	
-}
-
 const btnE1 = document.querySelector(".mybtn");
 const closeIconE1 = document.querySelector(".close-icon");
 const trailerContainerE1 = document.querySelector(".trailercontainer");

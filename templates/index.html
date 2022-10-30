@@ -90,23 +90,23 @@
     </div>
   </div>
  
-  <div class="form-popup" id="myForm1">
+	<div class="form-popup" id="myForm1">
     
-    <form action="welcome" class="form-container" method="POST">
-      {% csrf_token %}
-      <h1>Log In</h1>
+		<form action="welcome" class="form-container" method="POST">
+			{% csrf_token %}
+			<h1>Log In</h1>
 
-      <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="usnm" required>
+			<label for="username"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="usnm" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="passd" required>
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="passd" required>
 
-      <input type="submit" class="btn" value="Log In">
-      <button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
-    </form>
+			<input type="submit" class="btn" value="Log In">
+			<button type="button" class="btn cancel" onclick="closeForm1()">Close</button>
+    	</form>
   
-  </div>
+  	</div>
 
   <div class="form-popup suf" id="myForm2">
     <form action="signup" class="form-container" method="POST">
@@ -132,6 +132,25 @@
       <button type="button" class="btn cancel" onclick="closeForm2()">Close</button>
     </form>
   </div>
+
+	<div class="form-popup" id="enroll">
+    
+		<form action="enroll" class="form-container" method="POST">
+			{% csrf_token %}
+			<h1>Enroll</h1>
+
+			<input type="text" name="course" id="courseName" style="display: none;" required>
+			<label for="username"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="usnm" required>
+
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="passd" required>
+
+			<input type="submit" class="btn" value="Enroll">
+			<button type="button" class="btn cancel" onclick="closeEnrollForm()">Close</button>
+		</form>
+
+  	</div>
 
   <div class="mycontainer " id="mycontainer">
     <div class="container1" style="background-image: url('{% static "images/bg.png"%}')";>
@@ -163,7 +182,7 @@
           elit. Excepturi eos vel ipsum magni, sit voluptates atque odio id consectetur expedita accusamus qui amet
           minus fuga reprehenderit possimus sint accusantium totam?</p>
           
-          <a href="#ourcourses"><button class="mybtn">Enroll Now </button></a> 
+          <a href="#ourcourses"><button class="mybtn">Enroll Now </button></a>
       </div>
       <div class="c2img">
         <img src="{% static 'images/3d.png' %}" alt="">
@@ -176,11 +195,16 @@
       </div>
       <div class="cardcontainer">
         <div class="card">
-          <img src="{% static 'images/oops.png' %}" alt="DSA" style="width:100%">
+          <img src="{% static 'images/oops.png' %}" alt="DSA" style="width: 100%">
+
           <div class="container">
             <h3><b>Introduction to programming with C++</b></h3>
             <p>Description</p>
-            <button class="mybtn">Enroll Now</button>
+
+			<a href="#mycontainer">
+				<button class="mybtn" onclick="openEnrollForm(1)">Enroll Now</button>
+			</a>
+
           </div>
         </div>
         <div class="card">
@@ -188,7 +212,11 @@
           <div class="container">
             <h3><b>DSA Course (Upcoming)</b></h3>
             <p>Description</p>
-            <button class="mybtn">Enroll Now</button>
+
+			<a href="#mycontainer">
+				<button class="mybtn" onclick="openEnrollForm(2)">Enroll Now</button>
+			</a>
+
           </div>
         </div>
         <div class="card">
@@ -196,7 +224,11 @@
           <div class="container">
             <h3><b>Web-Dev Course</b></h3>
             <p>Descripton</p>
-            <button class="mybtn">Enroll Now</button>
+
+			<a href="#mycontainer">
+				<button class="mybtn" onclick="openEnrollForm(3)">Enroll Now</button>
+			</a>
+
           </div>
         </div>
       </div>

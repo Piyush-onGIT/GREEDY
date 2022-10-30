@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>you are now logged in</title>
 	<link rel="stylesheet" href="{% static 'afterLog.css' %}">
-  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' %}" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -25,40 +24,23 @@
 	</div>
 
 	<div class="container3 " id="ourcourses">
-      <div class="c3txt">
-        <h1>My Courses</h1>
-      </div>
-      
-      <div class="cardcontainer owl-carousel">
-        <div class="card">
-          <div class="img">
-          <img src="{% static 'images/oops.png' %}" alt="DSA" style="width:100%"></div>
-          <div class="container">
-            <h3><b>Introduction to programming with C++</b></h3>
-            <p>Description</p>
-            <button class="mybtn">Enroll Now</button>
-          </div>
-        </div>
-        <div class="card ">
-          <div class="img">  <img src="{% static 'images/dsa.png' %}" alt="OOPs" style="width:100%"></div>
-          <div class="container">
-            <h3><b>DSA Course (Upcoming)</b></h3>
-            <p>Description</p>
-            <button class="mybtn">Enroll Now</button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="img"> <img src="{% static 'images/dev.jpg' %}" alt="WebDev" style="width:100%">
-          <div class="container">
-            <h3><b>Web-Dev Course</b></h3>
-            <p>Descripton</p>
-            <button class="mybtn">Enroll Now</button>
-          </div>
-        </div>
-      </div>
-    
-    </div>
-    <script src="{% static 'index.js' %}"></script>
+		<div class="c3txt">
+			<h1>My Courses</h1>
+		</div>
+		<div class="cardcontainer">
+			{% for number, name, image in data %}
+				<div class="card">
+					<img src="{{image}}" alt="DSA" style="width:100%">
+					<div class="container">
+						<h3><b>{{name}}</b></h3>
+						<p>Description</p>
+						<a href="courses/{{number}}"><button class="mybtn">View</button></a>
+					</div>
+				</div>
+				<p></p>
+			{% endfor %}
+		</div>
+	</div>
 </body>
 
 </html>

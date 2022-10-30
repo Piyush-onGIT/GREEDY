@@ -99,5 +99,4 @@ def enroll(request):
     return response
 
 def course(request, course_id):
-    page = "course" + str(course_id) + ".html"
-    return render(request, page)
+    return render(request, "lectures.html")

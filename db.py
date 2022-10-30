@@ -89,3 +89,18 @@ def getDetails(course):
             details.append(i[2])
 
     return details
+
+def getLectures(course):
+    wks = sheet.worksheet(course)
+    data = list(wks.get_all_values())
+    data.pop(0)
+
+    links = []
+    for i in data:
+        lst = []
+        lst.append(i[0])
+        lst.append(i[1])
+
+        links.append(lst)
+
+    return links

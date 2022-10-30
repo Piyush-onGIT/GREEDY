@@ -1,5 +1,6 @@
 from email.mime import image
 from http.client import HTTPResponse
+from multiprocessing import context
 import re
 from django.shortcuts import render, redirect
 from flask import request
@@ -99,4 +100,9 @@ def enroll(request):
     return response
 
 def course(request, course_id):
-    return render(request, "lectures.html")
+    course = "course" + str(course_id)
+    lecs = db.getLectures(course)
+    name = db.getDetails(course_id)[0]
+
+    context = {"data": lecs, "name": name}
+    return render(request, "lectures.html", context)

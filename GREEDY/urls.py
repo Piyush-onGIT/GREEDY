@@ -24,5 +24,6 @@ urlpatterns = [
     path("edit", mv.edit),
     path("signup", mv.signup),
     path("welcome", mv.login),
-    path("enroll", mv.enroll)
+    path("enroll", mv.enroll),
+    path("course/<int:course_id>", mv.course)
 ]

@@ -61,13 +61,15 @@ def login(request):
             enrolled = db.getEnCourses(usnm)
             name = []
             image = []
+            number = []
 
             for i in enrolled:
                 details = db.getDetails(i)
+                number.append(i)
                 name.append(details[0])
                 image.append(details[1])
 
-            final = zip(name, image)
+            final = zip(number, name, image)
             context = {"data": final}
 
             return render(request, "afterLog.html", context)
@@ -95,3 +97,7 @@ def enroll(request):
 
     response = redirect('/')
     return response
+
+def course(request, course_id):
+    page = "course" + str(course_id) + ".html"
+    return render(request, page)

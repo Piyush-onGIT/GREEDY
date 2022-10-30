@@ -28,19 +28,20 @@
 			<h1>My Courses</h1>
 		</div>
 		<div class="cardcontainer">
-			{% for course, image in data %}
+			{% for number, name, image in data %}
 				<div class="card">
 					<img src="{{image}}" alt="DSA" style="width:100%">
 					<div class="container">
-						<h3><b>{{course}}</b></h3>
+						<h3><b>{{name}}</b></h3>
 						<p>Description</p>
-						<button class="mybtn">View</button>
+						<a href="course/{{number}}"><button class="mybtn">View</button></a>
 					</div>
 				</div>
 				<p></p>
 			{% endfor %}
 		</div>
 	</div>
+	<script src="{% static 'index.js' %}"></script>
 </body>
 
 </html>

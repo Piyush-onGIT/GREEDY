@@ -1,5 +1,6 @@
 from email.mime import image
 from http.client import HTTPResponse
+from django.http import HttpResponse 
 from multiprocessing import context
 import re
 from django.shortcuts import render, redirect
@@ -9,8 +10,49 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from django.contrib import messages
 
+def getContext(cookie):
+    names = cookie['names']
+    number = cookie['number']
+    images = cookie['images']
+
+    names = names[1:]
+    names = names.rstrip(names[-1])
+    names = names.split(', ')
+
+    number = number[1:]
+    number = number.rstrip(number[-1])
+    number = number.split(', ')
+
+    images = images[1:]
+    images = images.rstrip(images[-1])
+    images = images.split(', ')
+
+    for i in range(0, len(names)):
+        names[i] = names[i][1:]
+        names[i] = names[i].rstrip(names[i][-1])
+
+    for i in range(0, len(number)):
+        number[i] = number[i][1:]
+        number[i] = number[i].rstrip(number[i][-1])
+
+    for i in range(0, len(images)):
+        images[i] = images[i][1:]
+        images[i] = images[i].rstrip(images[i][-1])
+
+    context = {"data": zip(number, names, images)}
+    return context
+
 def home(request):
-    return render(request, "index.html")
+    cookie = request.COOKIES
+    try:
+        if cookie["login"] == "1":
+            context = getContext(cookie)
+            return render(request, "afterLog.html", context)
+        else:
+            print("redirected")
+            return render(request, "index.html")
+    except:
+        return render(request, "index.html")
 
 
 def edit(request):
@@ -49,41 +91,58 @@ def signup(request):
     return render(request, "index.html")
 
 def login(request):
-    data = request.POST
-    usnm = data['usnm']
-    passd = data['passd']
-
-    check = db.check_username(usnm)
-
-    if check:
-        if check == passd:
-            # logged in
-            # messages.info(request, 4)
-            enrolled = db.getEnCourses(usnm)
-            name = []
-            image = []
-            number = []
-
-            for i in enrolled:
-                details = db.getDetails(i)
-                number.append(i)
-                name.append(details[0])
-                image.append(details[1])
-
-            final = zip(number, name, image)
-            context = {"data": final}
-
+    cookie = request.COOKIES
+    # if logged in already, don't read all the data again from db
+    try:
+        if (cookie['login'] == '1'):
+            context = getContext(cookie)
             return render(request, "afterLog.html", context)
-        else:
-            # wrong password
-            messages.info(request, 5)
-            return render(request, "index.html")
-    else:
-        # no account
-        messages.info(request, 6)
-        return render(request, "index.html")
+    except:
+        data = request.POST
+        usnm = data['usnm']
+        passd = data['passd']
 
-    return render(request, "index.html")
+        check = db.check_username(usnm)
+
+        if check:
+            if check == passd:
+                # logged in
+                # messages.info(request, 4)
+                
+                enrolled = db.getEnCourses(usnm)
+                name = []
+                image = []
+                number = []
+
+                for i in enrolled:
+                    details = db.getDetails(i)
+                    number.append(str(i))
+                    name.append(details[0])
+                    image.append(details[1])
+
+                final = zip(number, name, image)
+                context = {"data": final}
+                response = render(request, "afterLog.html", context)
+
+                # cookies
+                response.set_cookie('login', '1')
+                response.set_cookie("username", usnm)
+                response.set_cookie("names", name)
+                response.set_cookie("images", image)
+                response.set_cookie("number", number)
+
+
+                return response
+            else:
+                # wrong password
+                messages.info(request, 5)
+                return render(request, "index.html")
+        else:
+            # no account
+            messages.info(request, 6)
+            return render(request, "index.html")
+
+        return render(request, "index.html")
 
 def enroll(request):
     data = request.POST
@@ -100,9 +159,34 @@ def enroll(request):
     return response
 
 def course(request, course_id):
-    course = "course" + str(course_id)
-    lecs = db.getLectures(course)
-    name = db.getDetails(course_id)[0]
+    cookie = request.COOKIES
+    try:
+        if (cookie["login"] == "1"):
+            course = "course" + str(course_id)
+            lecs = db.getLectures(course)
+            name = db.getDetails(course_id)[0]
 
-    context = {"data": lecs, "name": name}
-    return render(request, "lectures.html", context)
+            context = {"data": lecs, "name": name}
+            return render(request, "lectures.html", context)
+        else:
+            return redirect("/")
+    except:
+        return redirect("/")
+
+    
+
+def logout(request):
+    cookie = request.COOKIES
+    response = render(request, "index.html")
+    try:
+        if (cookie["login"] == "1"):
+            response.delete_cookie("login", "1")
+            return response
+        else:
+            return redirect("/")
+    except:
+        return redirect("/")
+
+def myCourses(request):
+    context = getContext(request.COOKIES)
+    return render(request, "afterLog.html", context)

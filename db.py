@@ -55,14 +55,19 @@ def enroll(course, usnm):
     wks = sheet.worksheet("enrolled")
     n = rows("enrolled")
     data = list(wks.get_all_values())
-    count = 1
+
     data.pop(0)
-
+    allEnrolled = []
     for i in data:
-        if i[int(course) - 1] != '':
-            count += 1
+        allEnrolled.append(i[int(course) - 1])
 
-    wks.update_cell(count + 1, course, usnm)
+    if allEnrolled.count(usnm) == 0:
+        count = 1
+        for i in data:
+            if i[int(course) - 1] != '':
+                count += 1
+
+        wks.update_cell(count + 1, course, usnm)
 
 def getEnCourses(username):
     wks = sheet.worksheet("enrolled")
@@ -87,7 +92,7 @@ def getDetails(course):
         if i[0] == str(course):
             details.append(i[1])
             details.append(i[2])
-
+            
     return details
 
 def getLectures(course):

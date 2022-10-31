@@ -166,8 +166,16 @@ def course(request, course_id):
             lecs = db.getLectures(course)
             name = db.getDetails(course_id)[0]
 
-            context = {"data": lecs, "name": name}
-            return render(request, "lectures.html", context)
+            enrolled = []
+            data = getContext(cookie)
+            for i, j, k in data["data"]:
+                enrolled.append(i)
+
+            if str(course_id) in enrolled:
+                context = {"data": lecs, "name": name}
+                return render(request, "lectures.html", context)
+            else:
+                return redirect("/")
         else:
             return redirect("/")
     except:

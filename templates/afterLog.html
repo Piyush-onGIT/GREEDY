@@ -7,6 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>You are now logged in</title>
+	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'afterLog.css' %}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
@@ -27,15 +28,19 @@
 					<li class="nav-item"><a href="#"></a></li>
 					<li class="nav-item"><a href="#"></a></li>
 					<li class="nav-item"><a href="#"></a></li>
-					<li class="nav-item"><a href="#">Log Out</a></li>
+					<li class="nav-item"><a href="/logout">Log Out</a></li>
 				</ul>
 			</nav>
 		</div>
 		<div class="header">
-			<h1>My Courses</h1>
+			
+     <svg viewBox="0 10 1320 350">
+	<text x="50%" y="50%" dy=".35em" text-anchor="middle">
+		My Courses
+	</text>
+       </svg>
 		</div>
 		<section class="features">
-			
 			{% for number, name, image in data %}
 			<div class="feature-container">
 				<img src="{{image}}" alt="Flexbox Feature">

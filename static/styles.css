@@ -55,9 +55,9 @@ body {
 }
 #navbar img {
   margin-top: 15px;
-  margin-left: 15px;
-  width: 50px;
-  height: 25px;
+  margin-left: 25px;
+  width: 130px;
+  height: 35px;
 }
 #navbar img:hover{
   cursor: pointer;
@@ -79,7 +79,7 @@ body {
   color: white;
 }
 
-@media (min-width: 460px){
+@media (max-width: 460px){
  
 #navbar {
   background-color: #a44dec;
@@ -95,10 +95,10 @@ body {
  justify-content: center;
 }
 #navbar img{
-  margin-top: 7px;
-  margin-left: 15px;
-  width: 150px;
-  height: 39px;
+  margin-top: 10px;
+  margin-left: 0px;
+  width: 90px;
+  height: 30px;
 }
 #navbar img:hover{
   cursor: pointer;
@@ -110,7 +110,7 @@ body {
   text-align: center;
   padding: 15px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 12px;
   cursor: pointer;
   font-family: 'Quicksand', sans-serif;
 }
@@ -237,14 +237,15 @@ body {
 }
 
 .c2txt {
-  width: 60%;
+  width: 65%;
   padding: 5%;
   color: rgb(30, 30, 30);
 
+  
 }
 
 .c2txt h1 {
-  font-size: 2.8em;
+  font-size: 2.4em;
 }
 
 .c2txt p {
@@ -591,15 +592,24 @@ body {
   margin-bottom: 200px;
 
 }
-.z-icon{
+.close-icon{
   position:absolute;
   margin-bottom: 400px;
-  right:2%;
+  right:7%;
   color: white;
   cursor: pointer;
 }
 .active2{
   filter: blur(5px) brightness(.7);
+}
+@media (min-width: 420px){
+  .close-icon{
+    position:absolute;
+    margin-bottom: 400px;
+    right:12%;
+    color: white;
+    cursor: pointer;
+  }
 }
 @media (min-width: 800px){
   .trailercontainer iframe{
@@ -630,7 +640,7 @@ body {
   .close-icon{
     position:absolute;
     margin-bottom: 650px;
-    right: 10%;
+    right: 15%;
   color: white;
     cursor: pointer;
   }
@@ -647,7 +657,7 @@ body {
   .close-icon{
     position:absolute;
     margin-bottom: 850px;
-    right: 10%;
+    right: 20%;
   color: white;
     cursor: pointer;
   }
@@ -664,7 +674,7 @@ body {
   .close-icon{
     position:absolute;
     margin-bottom: 1000px;
-    right: 10%;
+    right: 24%;
   color: white;
     cursor: pointer;
   }

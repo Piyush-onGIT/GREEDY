@@ -55,13 +55,15 @@
   }
   
   /* NAVIGATION */
-  
+ 
   .navbar {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
     align-items: center;
+    z-index: 2;
     height: 50px;
     font-weight: 900;
+    position: relative;
     overflow: hidden;
     box-shadow: -3px 3px 5px 0px #535353b7;
   }
@@ -78,7 +80,6 @@
     display: grid;
     grid-template-columns: repeat(2,1.5fr);
     justify-self: end;
-    
   }
   .nav-item button{
     padding: 15px;
@@ -127,6 +128,7 @@
     display: flex;
     padding: 50px 20px;
     justify-content: space-around;
+    z-index: 0;
   }
   
   .feature-container {
@@ -310,6 +312,7 @@
       transform: translate(-101%);
       text-align: center;
       overflow: hidden;
+      z-index: 1;
     }
     
     .navbar li {
@@ -371,7 +374,7 @@
 
 
  /*lectures section*/
- :root {
+  :root {
   --primary: #fbfcfc;
   --active: #f1f1f1;
   --secondary: #767777;
@@ -400,8 +403,11 @@ a.channel:hover {
 .icon-active {
   filter: sepia(100%) hue-rotate(150deg) saturate(400%);
 }
-
-#playlist {
+#playlist{
+  display: flex;
+  justify-content: center;
+} 
+/* #playlist {
   top: 50%;
   left: 50%;
   width: 80vw;
@@ -410,10 +416,12 @@ a.channel:hover {
   position: absolute;
   transform: translate(-50%, -50%);
   transition: all ease 0.3s;
-}
+  z-index: 0;
+} */
 
 #video-dis {
-  flex: 6.5;
+  width: 60%;
+  height: 75vh;
   margin-right: 20px;
   background: black;
 }
@@ -422,21 +430,19 @@ a.channel:hover {
   height: 100%;
 }
 .video-li {
-  flex: 3.5;
-  display: flex;
   padding: var(--b-pad);
   border-radius: 3px;
-  flex-direction: column;
   background: var(--primary);
 }
-.li-collapsed {
+ .li-collapsed {
   overflow: hidden;
-  height: 50px;
+  height: 70px;
 }
+
 #vli-info {
   flex: 3;
   padding: 0 var(--b-pad) 0 var(--b-pad);
-}
+} 
 
 #upper-info {
   display: flex;
@@ -445,6 +451,7 @@ a.channel:hover {
 #li-titles {
   flex: 9;
 }
+
 #li-titles div {
   padding-bottom: 5px;
 }
@@ -455,7 +462,7 @@ a.channel:hover {
   background: url(https://user-images.githubusercontent.com/50569315/118832584-92350500-b8e2-11eb-8398-9a90a4615b98.png)
     no-repeat center;
   background-size: 50%;
-}
+} 
 
 #lower-info {
   display: flex;
@@ -466,19 +473,19 @@ a.channel:hover {
   height: 40px;
   cursor: pointer;
 }
-#btn-repeat {
+/* #btn-repeat {
   margin-right: var(--b-pad);
   background: url(https://user-images.githubusercontent.com/50569315/118832591-93663200-b8e2-11eb-8b98-3b177304b555.png)
     no-repeat left;
   background-size: 50%;
-}
-#btn-suffle {
+} */
+/* #btn-suffle {
   margin-right: var(--b-pad);
   background: url(https://user-images.githubusercontent.com/50569315/118832597-93fec880-b8e2-11eb-9146-f978064eddb1.png)
     no-repeat left;
   background-size: 45%;
-}
-#btn-save {
+} */
+/* #btn-save {
   margin-left: auto;
   order: 2;
   right: 10px;
@@ -486,12 +493,12 @@ a.channel:hover {
   background: url(https://user-images.githubusercontent.com/50569315/118832594-93fec880-b8e2-11eb-8201-12cb52be231f.png)
     no-repeat right;
   background-size: 60%;
-}
+} */
 
-#vli-videos {
+/* #vli-videos {
   flex: 7;
   overflow: auto;
-}
+}*/
 
 .video-con {
   display: flex;
@@ -521,36 +528,82 @@ a.channel:hover {
 }
 .v-titles div:nth-child(2) {
   margin-top: var(--s-pad);
-}
-
-@media only screen and (max-width: 1150px) {
+} 
+/* @media only screen and (max-width: 1150px) {
   #playlist {
     width: 95vw;
     height: 60vh;
   }
-}
-@media only screen and (max-width: 950px) {
-  #playlist {
-    top: 10%;
-    width: 50vw;
-    margin: 0 auto;
-    display: block;
-    align-items: center;
-    transform: translate(-50%, 0%);
-  }
+} */
+ @media only screen and (max-width: 950px) {
+  #playlist{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  } 
   #video-dis {
-    margin-bottom: var(--b-pad);
-    width: 100%;
-    height: 300px;
+    width: 70%;
+    height: 65vh;
+    margin-right: 20px;
+    background: black;
+    display: flex;
+    margin-left: 15%;
+    justify-content: center;
   }
-}
-@media only screen and (max-width: 800px) {
-  #playlist {
-    width: 60vw;
+  .video-li{
+    width:70% ;
+    margin-left: 15%;
   }
-}
-@media only screen and (max-width: 650px) {
-  #playlist {
-    width: 80vw;
+  #drop-icon {
+    flex: 1;
+    cursor: pointer;
+    background: url(https://user-images.githubusercontent.com/50569315/118832584-92350500-b8e2-11eb-8398-9a90a4615b98.png)
+      no-repeat center;
+    background-size: 30%;
+  } 
+} 
+ @media only screen and (max-width: 800px) {
+  #video-dis {
+    width: 70%;
+    height: 55vh;
+    margin-right: 20px;
+    background: black;
+    display: flex;
+    margin-left: 15%;
+    justify-content: center;
+  }
+  .video-li{
+    width:70% ;
+    margin-left: 15%;
+  }
+} 
+ @media only screen and (max-width: 650px) {
+  #video-dis {
+    width: 70%;
+    height: 45vh;
+    margin-right: 20px;
+    background: black;
+    display: flex;
+    margin-left: 15%;
+    justify-content: center;
+  }
+  .video-li{
+    width:70% ;
+    margin-left: 15%;
+  }
+} 
+@media only screen and (max-width: 400px) {
+  #video-dis {
+    width: 90%;
+    height: 30vh;
+    margin-right: 20px;
+    background: black;
+    display: flex;
+    margin-left: 5%;
+    justify-content: center;
+  }
+  .video-li{
+    width:90% ;
+    margin-left: 5%;
   }
 }

@@ -198,3 +198,7 @@ def logout(request):
 def myCourses(request):
     context = getContext(request.COOKIES)
     return render(request, "afterLog.html", context)
+
+
+def teams(request):
+    return render(request, "aboutus.html")

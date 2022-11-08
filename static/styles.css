@@ -56,8 +56,8 @@ body {
 #navbar img {
   margin-top: 15px;
   margin-left: 25px;
-  width: 130px;
-  height: 35px;
+  width: 150px;
+  height: 45px;
 }
 #navbar img:hover{
   cursor: pointer;
@@ -70,6 +70,7 @@ body {
   padding: 15px;
   text-decoration: none;
   font-size: 17px;
+  padding-top: 22px;
   cursor: pointer;
   font-family: 'Quicksand', sans-serif;
 }
@@ -77,6 +78,7 @@ body {
 #navbar a:hover {
   background-color: #9336e0;
   color: white;
+  padding-bottom: 23px;
 }
 
 @media (max-width: 460px){

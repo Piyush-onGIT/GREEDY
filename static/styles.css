@@ -56,8 +56,8 @@ body {
 #navbar img {
   margin-top: 15px;
   margin-left: 25px;
-  width: 130px;
-  height: 35px;
+  width: 150px;
+  height: 45px;
 }
 #navbar img:hover{
   cursor: pointer;
@@ -70,6 +70,7 @@ body {
   padding: 15px;
   text-decoration: none;
   font-size: 17px;
+  padding-top: 22px;
   cursor: pointer;
   font-family: 'Quicksand', sans-serif;
 }
@@ -77,6 +78,7 @@ body {
 #navbar a:hover {
   background-color: #9336e0;
   color: white;
+  padding-bottom: 23px;
 }
 
 @media (max-width: 460px){
@@ -145,12 +147,13 @@ body {
   
   max-width: 300px;
   padding: 5px 10px 0 10px;
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: white;
+  color: black;
   border-radius: 2px;
   box-shadow: -3px 3px 10px #535353;
   animation: 0.5s ease-out 0s 1 slideInFromBottom;
   font-family: 'Rubik', sans-serif;
+  border-radius: 8px;
 }
 
 @media (min-width: 1100px){
@@ -183,6 +186,7 @@ body {
   cursor: pointer;
   width: 100%;
   margin-bottom: 10px;
+  border-radius: 5px;
   opacity: 0.8;
 }
 
@@ -274,7 +278,7 @@ body {
 .c3txt h1 {
   text-align: center;
   color: rgb(40, 40, 40);
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -679,3 +683,4 @@ body {
     cursor: pointer;
   }
 }
+/* about us  */

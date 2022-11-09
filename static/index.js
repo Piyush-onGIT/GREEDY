@@ -71,3 +71,4 @@ closeIconE1.addEventListener("click", () => {
 	ContainerE5.classList.remove("active2");
 
 });
+// slider

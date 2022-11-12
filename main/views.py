@@ -155,8 +155,8 @@ def enroll(request):
         if (pwd == pswd):
             db.enroll(course, usnm)
 
-    response = redirect('/')
-    return response
+    # response = redirect('/')
+    return login(request)
 
 def course(request, course_id):
     cookie = request.COOKIES

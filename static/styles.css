@@ -296,11 +296,20 @@ body {
 
 .c5t {
   padding: 5%;
+  text-decoration: none;
 }
 
+.yoi{
+ text-decoration: none;
+ color: #000;
+}
 .features {
   display: flex;
   justify-content: center;
+}
+.c5t p{
+  text-decoration: none;
+ 
 }
 
 .mybtn {

@@ -85,8 +85,8 @@
     
     <div style="float: right;">
       <a class="open-button" href="/our-team">Our Team</a>
-      <a class="open-button" onclick="openForm1()">Log In</a>
-      <a class="open-button" onclick="openForm2()">Sign Up</a>
+      <a class="open-button" href="#cnt1" onclick="openForm1()">Log In</a>
+      <a class="open-button" href="#cnt1" onclick="openForm2()">Sign Up</a>
     </div>
   </div>
  
@@ -153,7 +153,7 @@
   	</div>
 
   <div class="mycontainer " id="mycontainer">
-    <div class="container1" style="background-image: url('{% static "images/bg.png"%}')";>
+    <div id="cnt1" class="container1" style="background-image: url('{% static "images/bg.png"%}')";>
      
       <div class="c1img ">
         
@@ -198,7 +198,7 @@
 
           <div class="container">
             <h3><b>Introduction to programming with C++</b></h3>
-            <p>Description</p>
+            <p></p>
 
 			<a href="#mycontainer">
 				<button class="mybtn" onclick="openEnrollForm(1)">Enroll Now</button>
@@ -210,7 +210,7 @@
           <img src="{% static 'images/dsa.png' %}" alt="OOPs" style="width:100%">
           <div class="container">
             <h3><b>DSA Course (Upcoming)</b></h3>
-            <p>Description</p>
+            <p></p>
 
 			<a href="#mycontainer">
 				<button class="mybtn" onclick="openEnrollForm(2)">Enroll Now</button>
@@ -221,8 +221,8 @@
         <div class="card">
           <img src="{% static 'images/dev.jpg' %}" alt="WebDev" style="width:100%">
           <div class="container">
-            <h3><b>Web-Dev Course</b></h3>
-            <p>Descripton</p>
+            <h3><b>Web-Dev Course (Upcoming)</b></h3>
+            <p></p>
 
 			<a href="#mycontainer">
 				<button class="mybtn" onclick="openEnrollForm(3)">Enroll Now</button>
@@ -237,13 +237,13 @@
         <h1 class="heading">Features</h1>
       </div>
       <div class="features">
-        <div class="card2">
+      <div  class="card2">
           <div class="c5img">
-            <img src="{% static 'images/f1.png' %}" alt="VideoLectures">
+         <img src="{% static 'images/f1.png' %}" alt="VideoLectures"> 
           </div>
           <div class="c5t">
             <h3>Video Lectures</h3>
-            <p>Description</p>
+            <p>Beginner Friendly</p>
           </div>
         </div>
         <div class="card2">
@@ -252,18 +252,18 @@
           </div>
           <div class="c5t">
             <h3>Problem Set</h3>
-            <p>Description</p>
+            <p>Curated Problems</p>
           </div>
         </div>
       </div>
       <div class="features">
         <div class="card2">
           <div class="c5img">
-            <img src="{% static 'images/f3.png' %}" alt="DoubtSolving">
+            <a target="_blank" href="https://classroom.google.com/c/NTY5Nzg5MzkzMTg0"><img src="{% static 'images/f3.png' %}" alt="DoubtSolving"></a>
           </div>
           <div class="c5t">
-            <h3>Doubt Solving</h3>
-            <p>Description</p>
+           <h3>Assignments</h3>
+           <p>Assistance Included</p>
           </div>
         </div>
         <div class="card2">
@@ -271,8 +271,8 @@
             <img src="{% static 'images/f4.png' %}" alt="Mentorship">
           </div>
           <div class="c5t">
-            <h3>Mentorship</h3>
-            <p>Description</p>
+            <h3>Personalized Doubt Solving</h3>
+            <p>Premium Members Only!!</p>
           </div>
         </div>
       </div>

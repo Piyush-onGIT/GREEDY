@@ -138,7 +138,7 @@
     
   }
   body{
-    background-color: #a44dec;
+    background-color:#F5F5F5;
   }
   
   .feature-container p {
@@ -412,7 +412,7 @@ a.channel:hover {
 #playlist{
   display: flex;
   justify-content: center;
-  background-color: #a44dec;
+  background-color:#F5F5F5;
   
 } 
 /* #playlist {

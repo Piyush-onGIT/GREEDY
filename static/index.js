@@ -72,3 +72,4 @@ closeIconE1.addEventListener("click", () => {
 
 });
 // slider
+		

@@ -1,41 +1,43 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="loginstyle.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
     <title>Log In</title>
   </head>
   <body>
     <div class="main-container">
       <div class="left-section">
         <div class="left-section-logo1">
-          <img src="../static/images/logo1.png" alt="">
+          <img src="{% static 'images/logo1.png' %}" alt="">
         </div>
         <div class="left-section-logo2">
-          <img src="../static/images/logo1.png" alt="">
+          <img src="{% static 'images/logo1.png' %}" alt="">
         </div>
       </div>
       <div class="middle-section">
         <h1 data-heading="LOG IN">LOG IN</h1>
       </div>
       <div class="right-section">
-        <form action="" class="form__content">
+        <form action="welcome" class="form__content" method="POST">
+          {% csrf_token %}
               <h1 class="log-in">Log <span style="color:#F36527">In</span></h1>
               <div class="form__box">
-                <input type="text" class="form__input" placeholder="Email">
-                <label for="" class="form__label">ENTER EMAIL</label>
+                <input type="text" class="form__input" placeholder="YOUR USERNAME" name="usnm">
+                <label for="" class="form__label">YOUR USERNAME</label>
                 <div class="form__shadow"></div>
               </div>
               <div class="form__box">
-                <input type="text" class="form__input" placeholder="Password">
+                <input type="text" class="form__input" placeholder="Password" name="passd">
                 <label for="" class="form__label">ENTER PASSWORD</label>
                 <div class="form__shadow"></div>
               </div>
               <div class="log-in-section">
                 <div class="not-a-member">
-                  <p>No Account? <a href="#" >Create One!</a></p>
+                  <p>No Account? <a href="/reg" >Create One!</a></p>
                 </div>
                 <div class="form__button">
                     <input type="Submit" class="form__submit" value="Log In">
@@ -45,6 +47,6 @@
       </div>
       </div>
     </div>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="{% static 'main.js' %}"></script>
   </body>
 </html>

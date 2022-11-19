@@ -19,7 +19,7 @@ def allRec(work):
     wks = sheet.worksheet(work)
     return wks.get_all_records()
 
-def addUser(name, email, pswd):
+def addUser(fname, name, email, pswd):
     wks = sheet.worksheet("users")
     n = rows("users")
     n += 2
@@ -27,9 +27,10 @@ def addUser(name, email, pswd):
     dt.strftime("%d-%m-%Y %H:%M:%S")
     
     wks.update_cell(n, 1, name)
-    wks.update_cell(n, 2, email)
-    wks.update_cell(n, 3, pswd)
-    wks.update_cell(n, 4, str(dt))
+    wks.update_cell(n, 2, fname)
+    wks.update_cell(n, 3, email)
+    wks.update_cell(n, 4, pswd)
+    wks.update_cell(n, 5, str(dt))
 
 def check_username(username):
     wks = sheet.worksheet("users")

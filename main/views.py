@@ -63,9 +63,10 @@ def edit(request):
 def signup(request):
     d = request.POST
     print(d)
+    name = d['fname'] + " " + d["lname"]
     usnm = d['usnm']
     mail = d['email']
-    passd = d['password']
+    passd = d['passd']
     repass = d['re-passd']
 
     if (passd != repass):
@@ -86,9 +87,8 @@ def signup(request):
         messages.info(request, 3)
         return render(request, "index.html")
 
-    db.addUser(usnm, mail, passd)
-        
-    return render(request, "index.html")
+    db.addUser(name, usnm, mail, passd)
+    return login(request)
 
 def login(request):
     cookie = request.COOKIES
@@ -136,11 +136,11 @@ def login(request):
             else:
                 # wrong password
                 messages.info(request, 5)
-                return render(request, "index.html")
+                return render(request, "login.html")
         else:
             # no account
             messages.info(request, 6)
-            return render(request, "index.html")
+            return render(request, "login.html")
 
         return render(request, "index.html")
 
@@ -202,3 +202,9 @@ def myCourses(request):
 
 def teams(request):
     return render(request, "aboutus.html")
+
+def log(request):
+    return render(request, "login.html")
+
+def reg(request):
+    return render(request, "signup.html")

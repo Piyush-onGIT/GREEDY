@@ -1,20 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signupstyle.css">
-    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="{% static 'signupstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
     <title>Sign Up</title>
   </head>
   <body>
     <div class="main-container">
       <div class="left-section">
         <div class="left-section-logo1">
-          <img src="../static/images/logo1.png" alt="">
+          <img src="{% static 'images/logo1.png' %}" alt="">
         </div>
         <div class="left-section-logo2">
-          <img src="../static/images/logo1.png" alt="">
+          <img src="{% static 'images/logo1.png' %}" alt="">
         </div>
       </div>
       <div class="middle-section">
@@ -25,42 +28,43 @@
           <div class="sign-up">
             <h1>Sign <span style="color:#F36527">Up</span></h1>
           </div>
-          <form action="" class="form__content">
+          <form action="signup" class="form__content" method="POST">
+            {% csrf_token %}
            <div class="name">
               <div class="form__box-name">
-                <input type="text" class="form__input" placeholder="First Name">
+                <input type="text" class="form__input" placeholder="First Name" name="fname">
                 <label for="" class="form__label">FIRST NAME</label>
                 <div class="form__shadow"></div>
               </div>
               <div class="form__box-name">
-                <input type="text" class="form__input" placeholder="Last Name">
+                <input type="text" class="form__input" placeholder="Last Name" name="lname">
                 <label for="" class="form__label">LAST NAME</label>
                 <div class="form__shadow"></div>
               </div>
             </div>
               <div class="form__box">
-                <input type="text" class="form__input" placeholder="Username">
+                <input type="text" class="form__input" placeholder="Username" name="usnm">
                 <label for="" class="form__label">ENTER USERNAME</label>
                 <div class="form__shadow"></div>
               </div>
               <div class="form__box">
-                <input type="text" class="form__input" placeholder="Email">
+                <input type="text" class="form__input" placeholder="Email" name="email">
                 <label for="" class="form__label">ENTER EMAIL</label>
                 <div class="form__shadow"></div>
               </div>
               <div class="form__box">
-                <input type="text" class="form__input" placeholder="Password">
+                <input type="password" class="form__input" placeholder="Password" name="passd">
                 <label for="" class="form__label">ENTER PASSWORD</label>
                 <div class="form__shadow"></div>
               </div>
               <div class="form__box">
-                  <input type="email" class="form__input" placeholder="Confirm Password">
+                  <input type="password" class="form__input" placeholder="Confirm Password" name="re-passd">
                   <label for="" class="form__label">CONFIRM PASSWORD</label>
                   <div class="form__shadow"></div>
               </div>
               <div class="sign-up-section">
                 <div class="already-member">
-                  <p>Already A Member? <a href="#" >Log In</a></p>
+                  <p>Already A Member? <a href="/log" >Log In</a></p>
                 </div>
                 <div class="form__button">
                     <input type="Submit" class="form__submit" value="Sign Up">
@@ -70,6 +74,6 @@
       </div>
       </div>
     </div>
-    <script type="module" src="/main.js"></script>
+    <script type="module" src="{% static 'main.js' %}"></script>
   </body>
 </html>

@@ -25,7 +25,7 @@ urlpatterns = [
     path("edit", mv.edit),
     path("signup", mv.signup),
     path("welcome", mv.login),
-    path("enroll", mv.enroll),
+    path("enroll/<int:course_id>", mv.enroll),
     path("courses/<int:course_id>", mv.course),
     path("logout", mv.logout),
     path("myCourses", mv.myCourses),

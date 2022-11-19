@@ -21,6 +21,7 @@
   :root {
     --normal-font-size: .838rem;
   }
+  
 }
 
 /*=============== BASE ===============*/
@@ -42,7 +43,6 @@ body {
     font-size: 2.5rem;
     transform: translateY(20%);
 }
-
 
 
 .name{
@@ -83,7 +83,7 @@ body {
     width: 180px;
     height: 48px;
     position: relative;
-  }
+}
 
 .form__shadow {
   position: absolute;
@@ -171,6 +171,10 @@ body {
     text-decoration: none;
 }
 
+.already-member{
+  margin-right: 1em;
+}
+
 /* Input bounce animation */
 @keyframes input-animation {
   0% {
@@ -186,10 +190,28 @@ body {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 450px) {
   .form__content, 
-  .form__box {
+  .form__box,
+  .name,
+  .sign-up,
+  .sign-up-section {
     width: 100%;
+  }
+  .form__box-name{
+    width: 135px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .form__content, 
+  .form__box,
+  .name,
+  .sign-up,
+  .sign-up-section{
+    width: 100%;
+  }
+  .form__box-name{
+    width: 125px;
   }
 }
 

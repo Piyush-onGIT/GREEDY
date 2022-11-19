@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1chw3=s5s(yi6jor397-x&4sqt)rz9k265z6-!rmm)yual@#g9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'dbugger.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'dbugger.herokuapp.com', 'dbugger.vercel.app', '.now.sh', 'dbugger.co.in']
 
 
 # Application definition
@@ -76,10 +76,10 @@ WSGI_APPLICATION = 'GREEDY.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
@@ -121,7 +121,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, "assests")
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

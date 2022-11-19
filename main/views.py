@@ -63,9 +63,10 @@ def edit(request):
 def signup(request):
     d = request.POST
     print(d)
+    name = d['fname'] + " " + d["lname"]
     usnm = d['usnm']
     mail = d['email']
-    passd = d['password']
+    passd = d['passd']
     repass = d['re-passd']
 
     if (passd != repass):
@@ -86,9 +87,8 @@ def signup(request):
         messages.info(request, 3)
         return render(request, "index.html")
 
-    db.addUser(usnm, mail, passd)
-        
-    return render(request, "index.html")
+    db.addUser(name, usnm, mail, passd)
+    return login(request)
 
 def login(request):
     cookie = request.COOKIES
@@ -136,27 +136,47 @@ def login(request):
             else:
                 # wrong password
                 messages.info(request, 5)
-                return render(request, "index.html")
+                return render(request, "login.html")
         else:
             # no account
             messages.info(request, 6)
-            return render(request, "index.html")
+            return render(request, "login.html")
 
         return render(request, "index.html")
 
-def enroll(request):
+def enroll(request, course_id):
+    cook = request.COOKIES
     data = request.POST
-    course = data["course"]
-    usnm = data["usnm"]
-    pswd = data["passd"]
+    course = str(course_id)
+    usnm = cook["username"]
 
     pwd = db.check_username(usnm)
     if pwd:
-        if (pwd == pswd):
-            db.enroll(course, usnm)
+        db.enroll(course, usnm)
+        enrolled = db.getEnCourses(usnm)
+        name = []
+        image = []
+        number = []
 
-    response = redirect('/')
-    return response
+        for i in enrolled:
+            details = db.getDetails(i)
+            number.append(str(i))
+            name.append(details[0])
+            image.append(details[1])
+
+        final = zip(number, name, image)
+        context = {"data": final}
+        response = redirect("/")
+
+        # cookies
+        response.set_cookie("names", name)
+        response.set_cookie("images", image)
+        response.set_cookie("number", number)
+
+        return response
+
+    # response = redirect('/')
+    return login(request)
 
 def course(request, course_id):
     cookie = request.COOKIES
@@ -202,3 +222,9 @@ def myCourses(request):
 
 def teams(request):
     return render(request, "aboutus.html")
+
+def log(request):
+    return render(request, "login.html")
+
+def reg(request):
+    return render(request, "signup.html")

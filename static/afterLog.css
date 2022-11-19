@@ -94,23 +94,19 @@
   .header{
     display: flex;
     justify-content: left;
-    padding-left: 3%;
+    padding-left: 1%;
     margin-top: 15px;
    
   }
   .header svg {
     font-family: 'Quicksand', sans-serif;
-    
     width: 30%; height: 40%;
   }
   .header svg text {
-   
     animation: stroke 3s  alternate;
     stroke-width: 2;
     stroke: #365fa0;
     font-size: 200px;
-    
-    
   }
   @media only screen and (max-width: 720px){
     .header{

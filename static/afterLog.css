@@ -56,7 +56,7 @@ nav{
   bottom: 0;
   height: 100vh;
   left: 0;
-  width: 90px;
+  width: 85px;
   /* width: 280px; */
   background: #fff;
   overflow: hidden;
@@ -67,16 +67,16 @@ nav:hover{
   transition: 1s;
 }
 .logo{
-  text-align: center;
+  text-align: left;
   display: flex;
   margin: 10px 0 0 10px;
+  margin-left: -5px;
   padding-bottom: 3rem;
 }
 
 .logo img{
-  width: 70%;
- 
- 
+  width: 80%;
+  /* padding-right: 11px; */
 }
 .logo span{
   font-weight: bold;
@@ -84,7 +84,7 @@ nav:hover{
   font-size: 18px;
   text-transform: uppercase;
 }
-a{
+nav a{
   position: relative;
   width: 280px;
   font-size: 14px;
@@ -105,10 +105,10 @@ nav .fas{
   top: 12px;
   margin-left: 10px;
 }
-a:hover{
+nav a:hover{
   background: #eee;
 }
-a:hover i{
+nav a:hover i{
   color:orangered;
   transition: 0.5s;
 }
@@ -187,7 +187,7 @@ a:hover i{
 }
 .users .card button{
   width: 100%;
-  margin-top: 8px;
+  margin-top: 0px;
   padding: 7px;
   cursor: pointer;
   border-radius: 10px;
@@ -204,6 +204,30 @@ a:hover i{
   flex-direction: column;
   width: 80vw;
   margin-left: 15vw;
+}
+@media (max-width: 1313px) {
+  .users .card{
+    border-radius: 10px;
+  }
+  .users .card img{
+    width: 100%;
+    height: 45%;
+   
+  }
+  .users .card h4{
+    text-transform: uppercase;
+    color: #012970;
+  }
+  .users .card p{
+    font-size: 10px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    color: orangered;
+  }
+  .users td{
+    font-size: 12px;
+    padding-right: 15px;
+  }
 }
 @media (max-width: 1113px) {
   .users .card{
@@ -241,5 +265,53 @@ a:hover i{
     background: #012970;
     color: #fff;
     transition: 0.5s;
+  }
+  .herosec{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 0vw;
+  }
+}
+@media (max-width: 900px) {
+  .herosec{
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin-left: 0vw;
+  }
+  .main .users{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .users .card{
+    width: 55%;
+    margin: 10px;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
+    transition: all .3s ease-in-out;
+  }
+}
+@media (max-width: 500px) {
+  .users .card{
+    width: 85%;
+    margin: 10px;
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
+    transition: all .3s ease-in-out;
+  }
+  .logo img{
+    width: 50%;
+   
+   
   }
 }

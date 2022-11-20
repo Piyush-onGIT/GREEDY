@@ -46,36 +46,7 @@
 			<section class="main">
 				<div class="main-top">
 					<h1>Enrolled Courses</h1>
-					<i class="	fas fa-edit fa-lg"></i>
-				</div>
-				<div class="users">
-					{% for number, name, image in data %}
-					<div class="card">
-						<img src="{{image}}">
-						<h4>{{name}}</h4>
-						<p>Educator - Piyush Kumar</p>
-						<div class="per">
-							<table>
-								<tr>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-								</tr>
-							</table>
-						</div>
-						<a href="courses/{{number}}">
-							<button>View</button>
-						</a>
-					</div>
-					{% endfor %}
-				</div>
-			</section>
 
-			<section class="main">
-				<div class="main-top">
-					<h1>Available Courses</h1>
-					<i class="fas fa-edit fa-lg"></i>
 				</div>
 				<div class="users">
 					<div class="card">
@@ -83,18 +54,10 @@
 						<h4>Introduction to C++</h4>
 						<p>Educator - Piyush Kumar</p>
 						<div class="per">
-							<table>
-								<tr>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-								</tr>
-							</table>
+
 						</div>
-						<a href="/enroll/1">
-							<button>Enroll</button>
-						</a>
+
+						<a href=""> <button>View</button></a>
 					</div>
 					<div class="card">
 						<img src="{% static 'images/dev.jpg' %}">
@@ -102,44 +65,69 @@
 						<p>Educator - Anurag Deo </p>
 						<div class="per">
 							<table>
-								<tr>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-								</tr>
+
 							</table>
 						</div>
-						<a href="/enroll/2">
-							<button>Enroll</button>
-						</a>
+						<button>View</button>
 					</div>
 					<div class="card">
 						<img src="{% static 'images/dsa.png' %}">
 						<h4>DSA (Upcoming)</h4>
 						<p>Educator - Viraj Chandra</p>
 						<div class="per">
+
+						</div>
+						<button>View</button>
+					</div>
+
+				</div>
+
+
+			</section>
+
+			<section class="main">
+				<div class="main-top">
+					<h1>Available Courses</h1>
+
+				</div>
+				<div class="users">
+					<div class="card">
+						<img src="{% static 'images/cpp.png' %}">
+						<h4>Introduction to C++</h4>
+						<p>Educator - Piyush Kumar</p>
+						<div class="per">
+
+						</div>
+						<button>Enroll</button>
+					</div>
+					<div class="card">
+						<img src="{% static 'images/dev.jpg' %}">
+						<h4>Web-dev Course</h4>
+						<p>Educator - Anurag Deo </p>
+						<div class="per">
 							<table>
-								<tr>
-									<td></td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td></td>
-								</tr>
 							</table>
 						</div>
-						<a href="/enroll/3">
-							<button>Enroll</button>
-						</a>
+						<button>Enroll</button>
 					</div>
+					<div class="card">
+						<img src="{% static 'images/dsa.png' %}">
+						<h4>DSA (Upcoming)</h4>
+						<p>Educator - Viraj Chandra</p>
+						<div class="per">
+
+						</div>
+						<button>Enroll</button>
+					</div>
+
 				</div>
+
+
 			</section>
 		</div>
 	</div>
 
-	<script src="script.js"></script>
+	<script src="{% static 'script.js' %}"></script>
 </body>
 
 </html>

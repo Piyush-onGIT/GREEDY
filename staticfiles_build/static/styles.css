@@ -8,13 +8,12 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 :root {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Poppins";
+  font-family: "Open Sans", sans-serif;
   color: #444444;
 }
 
@@ -34,7 +33,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -66,7 +65,6 @@ section {
   line-height: 42px;
   font-weight: 700;
   color: orangered;
-  font-family: "Poppins";
 }
 
 @media (max-width: 768px) {
@@ -199,7 +197,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: rgb(68, 26, 26);
-  font-family: "Poppins";
+  font-family: "Popins", sans-serif;
   margin-top: 3px;
 }
 
@@ -231,9 +229,9 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   color:#012970;
   white-space: nowrap;
   transition: 0.3s;
@@ -456,7 +454,7 @@ section {
 .hero h1 {
   margin: 0;
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 700;
   color: #012970;
 }
 
@@ -478,7 +476,7 @@ section {
 }
 
 .hero .btn-get-started span {
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -551,14 +549,14 @@ section {
 
 .about h3 {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: #4154f1;
   text-transform: uppercase;
 }
 
 .about h2 {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   color: #012970;
 }
 
@@ -578,7 +576,7 @@ section {
 }
 
 .about .btn-read-more span {
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -614,7 +612,7 @@ section {
 .values .box h3 {
   font-size: 24px;
   color: #012970;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 18px;
 }
 
@@ -659,7 +657,7 @@ section {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
   font-size: 14px;
 }
 
@@ -676,7 +674,7 @@ section {
 .features .feature-box h3 {
   font-size: 18px;
   color: #012970;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -701,7 +699,7 @@ section {
 
 .features .feture-tabs h3 {
   color: #012970;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 32px;
   margin-bottom: 10px;
 }
@@ -736,7 +734,7 @@ section {
 .features .feture-tabs .tab-content h4 {
   font-size: 18px;
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
   color: #012970;
 }
 
@@ -753,7 +751,7 @@ section {
 
 .features .feature-icons h3 {
   color: #012970;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 32px;
   margin-bottom: 20px;
   text-align: center;
@@ -771,7 +769,7 @@ section {
 
 .features .feature-icons .content .icon-box h4 {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 10px 0;
   color: #012970;
 }
@@ -813,7 +811,7 @@ section {
 
 .services .service-box h3 {
   color: #444444;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .services .service-box .read-more {
@@ -963,7 +961,7 @@ section {
 }
 
 .pricing h3 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 18px;
   margin-bottom: 15px;
 }
@@ -972,7 +970,7 @@ section {
   font-size: 36px;
   color: #444444;
   font-weight: 600;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 .pricing .price sup {
@@ -1018,7 +1016,7 @@ section {
   transition: none;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
   font-weight: 600;
   transition: 0.3s;
   border: 1px solid #4154f1;
@@ -1182,7 +1180,7 @@ section {
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
   color: #012970;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
@@ -1282,7 +1280,7 @@ section {
 
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
@@ -1304,7 +1302,7 @@ section {
 
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -1467,7 +1465,7 @@ section {
 }
 
 .team .member .member-info h4 {
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 5px;
   font-size: 20px;
   color: #012970;
@@ -1563,7 +1561,7 @@ section {
 .recent-blog-posts .post-box .post-title {
   font-size: 24px;
   color: #012970;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 18px;
   position: relative;
   transition: 0.3s;
@@ -1607,9 +1605,9 @@ section {
 }
 
 .contact .info-box h3 {
-  font-size: 18px;
+  font-size: 20px;
   color: #012970;
-  font-weight: 600;
+  font-weight: 700;
   margin: 20px 0 10px 0;
 }
 
@@ -2088,7 +2086,7 @@ section {
 
 .blog .sidebar .sidebar-title {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0 0 0 0;
   margin: 0 0 15px 0;
   color: #012970;
@@ -2249,7 +2247,7 @@ section {
   margin: 0 0 10px 0;
   padding: 0;
   line-height: 1;
-  font-weight: 600;
+  font-weight: 700;
   color: #012970;
 }
 
@@ -2321,7 +2319,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #012970;
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
   margin-top: 3px;
 }
 
@@ -2329,7 +2327,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Poppins";
+  font-family: "Nunito", sans-serif;
 }
 
 .footer .footer-top .social-links a {
@@ -2408,4 +2406,3 @@ section {
   font-size: 13px;
   color: #012970;
 }
-

@@ -2,17 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
-    font-family: 'Poppins';
+    font-family: 'Quicksand', sans-serif;
   }
- 
+  
   /* HEADINGS */
   
   h1, p {
@@ -50,7 +47,7 @@
   
   .grad-bar {
     width: 100%;
-    height: 7px;
+    height: 5px;
     background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
     background-size: 400% 400%;
         -webkit-animation: gradbar 15s ease infinite;
@@ -92,8 +89,8 @@
   }
   
   .nav-item a {
-    color:#012970;
-    font-size: 15.5px;
+    color: #000;
+    font-size: 0.9rem;
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s ease-out;
@@ -120,7 +117,7 @@
   .headline p{
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: 'Poppins';
+    font-family: 'Quicksand', sans-serif;
     font-size: larger;
   }
  
@@ -141,7 +138,7 @@
     
   }
   body{
-    background-color:#f1f1f1;
+    background-color:#F5F5F5;
   }
   
   .feature-container p {
@@ -238,7 +235,7 @@
   }
   
   #mobile-menu.is-active .bar:nth-child(3){
-    -webkit-transform: translateY(-18px) rotate(-45deg);
+    -webkit-transform: translateY(-8px) rotate(-45deg);
     -ms-transform: translateY(-8px) rotate(-45deg);
     -o-transform: translateY(-8px) rotate(-45deg);
     transform: translateY(-8px) rotate(-45deg);
@@ -313,21 +310,19 @@
       flex-direction: column;
       position: fixed;
       justify-content: start;
-      top: 0px;
+      top: 55px;
       background-color: #fff;
       width: 100%;
-      height: calc(100vh);
+      height: calc(100vh - 55px);
       transform: translate(-101%);
       text-align: center;
       overflow: hidden;
       z-index: 1;
-      padding-top: 20vh;
     }
     
     .navbar li {
       padding: 12px;
-      margin-left: 58%;
-      text-align: center;
+      margin-left: 50%;
     }
     
     .navbar li:first-child {
@@ -417,7 +412,7 @@ a.channel:hover {
 #playlist{
   display: flex;
   justify-content: center;
-  background-color:#f1f1f1;
+  background-color:#F5F5F5;
   
 } 
 /* #playlist {
@@ -449,14 +444,13 @@ a.channel:hover {
 }
  .li-collapsed {
   overflow: hidden;
-  height: 110px;
+  height: 70px;
 }
 
 #vli-info {
   flex: 3;
   padding: 0 var(--b-pad) 0 var(--b-pad);
   width: 20vw;
-  height: 105px;
 } 
 
 #upper-info {
@@ -478,7 +472,6 @@ a.channel:hover {
   background: url(https://user-images.githubusercontent.com/50569315/118832584-92350500-b8e2-11eb-8398-9a90a4615b98.png)
     no-repeat center;
   background-size: 50%;
-  color: orangered;
   
 } 
 
@@ -596,7 +589,7 @@ a.channel:hover {
   }
   #vli-info {
     padding: 0px;
-    height: 105px;
+    height: 80px;
     width: 150px;
     
     }
@@ -632,7 +625,7 @@ a.channel:hover {
   }
   #vli-info {
   padding: 0px;
-  height: 100px;
+  height: 80px;
   width: 160px;
   }
 }

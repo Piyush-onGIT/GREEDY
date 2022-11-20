@@ -22,7 +22,7 @@ def allRec(work):
 def addUser(fname, name, email, pswd):
     wks = sheet.worksheet("users")
     n = rows("users")
-    n += 1
+    n += 2
     dt = datetime.now()
     dt.strftime("%d-%m-%Y %H:%M:%S")
     

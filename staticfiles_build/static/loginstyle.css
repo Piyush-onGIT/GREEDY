@@ -80,14 +80,7 @@ body {
 	writing-mode: vertical-lr;
 }
 
-@media screen and (max-width: 750px) {
-  .left-section{
-    display: none;
-  }
-  .middle-section{
-    display: none;
-  }
-}
+
 
 
 

@@ -10,23 +10,19 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from django.contrib import messages
 
-# function to get data from saved cookies
 def getContext(cookie):
     names = cookie['names']
     number = cookie['number']
     images = cookie['images']
 
-    # convert names(string) to names(list)
     names = names[1:]
     names = names.rstrip(names[-1])
     names = names.split(', ')
 
-    # convert number(string) to number(list)
     number = number[1:]
     number = number.rstrip(number[-1])
     number = number.split(', ')
 
-    # convert images(string) to images(list)
     images = images[1:]
     images = images.rstrip(images[-1])
     images = images.split(', ')
@@ -43,11 +39,9 @@ def getContext(cookie):
         images[i] = images[i][1:]
         images[i] = images[i].rstrip(images[i][-1])
 
-    # zip all the three lists and return it
     context = {"data": zip(number, names, images)}
     return context
 
-# function to open home page(when logged out)
 def home(request):
     cookie = request.COOKIES
     try:
@@ -61,7 +55,11 @@ def home(request):
         return render(request, "index.html")
 
 
-# signup function
+def edit(request):
+    x = db.rows("users")
+    db.addUser("piyush", "xyz", "abcd")
+    return render(request, "index.html")
+
 def signup(request):
     d = request.POST
     print(d)
@@ -90,9 +88,8 @@ def signup(request):
         return render(request, "index.html")
 
     db.addUser(name, usnm, mail, passd)
-    return redirect("/log")
+    return login(request)
 
-# login function
 def login(request):
     cookie = request.COOKIES
     # if logged in already, don't read all the data again from db
@@ -147,10 +144,9 @@ def login(request):
 
         return render(request, "index.html")
 
-
-# Function to enroll in a course
 def enroll(request, course_id):
     cook = request.COOKIES
+    data = request.POST
     course = str(course_id)
     usnm = cook["username"]
 
@@ -172,16 +168,16 @@ def enroll(request, course_id):
         context = {"data": final}
         response = redirect("/")
 
-        # update cookies after getting enrolled
+        # cookies
         response.set_cookie("names", name)
         response.set_cookie("images", image)
         response.set_cookie("number", number)
 
         return response
 
+    # response = redirect('/')
     return login(request)
 
-# function to open lectures page for each course using course_id
 def course(request, course_id):
     cookie = request.COOKIES
     try:
@@ -205,13 +201,12 @@ def course(request, course_id):
     except:
         return redirect("/")
 
+    
 
-# logout function
 def logout(request):
     cookie = request.COOKIES
     response = render(request, "index.html")
     try:
-        # if cookies exist, remove it
         if (cookie["login"] == "1"):
             response.delete_cookie("login", "1")
             return response
@@ -220,14 +215,16 @@ def logout(request):
     except:
         return redirect("/")
 
-# function to open teams page
+def myCourses(request):
+    context = getContext(request.COOKIES)
+    return render(request, "afterLog.html", context)
+
+
 def teams(request):
     return render(request, "aboutus.html")
 
-# function to open login form
 def log(request):
     return render(request, "login.html")
 
-# function to open signup form
 def reg(request):
     return render(request, "signup.html")

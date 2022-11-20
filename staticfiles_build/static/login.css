@@ -74,7 +74,7 @@ body {
     width: 180px;
     height: 48px;
     position: relative;
-}
+  }
 
 .form__shadow {
   position: absolute;
@@ -162,10 +162,6 @@ body {
     text-decoration: none;
 }
 
-.not-a-member{
-  margin-right: 1em;
-}
-
 /* Input bounce animation */
 @keyframes input-animation {
   0% {
@@ -181,17 +177,9 @@ body {
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 340px) {
   .form__content, 
-  .form__box 
-  .log-in-section {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 350px) {
-  .form__content, 
-  .form__box 
-  .log-in-section {
+  .form__box {
     width: 100%;
   }
 }

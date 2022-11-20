@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 ul {
     margin: 0;
     padding: 0;
@@ -39,7 +41,7 @@ font-size:38px;
 
 font-weight:700;
 margin-bottom:12px;
-font-family: 'Quicksand', sans-serif;
+font-family: "Poppins";
 text-transform:uppercase;
 }
 @media (max-width:500px) {
@@ -94,7 +96,7 @@ font-weight:600;
 font-size:26px;
 line-height:1.2em;
 margin-top:75px;
-font-family: 'Quicksand', sans-serif;
+font-family: "Poppins";
 }
 
 .sec-title .text{
@@ -393,7 +395,7 @@ background-image: linear-gradient(to bottom, #FFEB3C 0%, #ff9600 100%);
     align-items: center;
     justify-content: space-between;
     padding: 10px 0 10px 30px;
-    font-family: "Nunito", sans-serif;
+    font-family: "Poppins";
     font-size: 16px;
     font-weight: 700;
     color:#012970;
@@ -413,6 +415,9 @@ background-image: linear-gradient(to bottom, #FFEB3C 0%, #ff9600 100%);
   .navbar .active:focus,
   .navbar li:hover>a {
     color: orangered;
+  }
+  .navbar a{
+    color: #012970;
   }
   
   .navbar .getstarted,
@@ -510,6 +515,11 @@ background-image: linear-gradient(to bottom, #FFEB3C 0%, #ff9600 100%);
   
   .mobile-nav-toggle.bi-x {
     color: #fff;
+  }
+  .nav-item a{
+    font-weight: 700;
+    font-family: "Poppins";
+    font-size: 14px;
   }
   
   

@@ -67,14 +67,14 @@ nav:hover{
   transition: 1s;
 }
 .logo{
-  text-align: center;
+  text-align: left;
   display: flex;
   margin: 10px 0 0 10px;
   padding-bottom: 3rem;
 }
 
 .logo img{
-  width: 70%;
+  width: 60%;
  
  
 }
@@ -84,7 +84,7 @@ nav:hover{
   font-size: 18px;
   text-transform: uppercase;
 }
-a{
+nav a{
   position: relative;
   width: 280px;
   font-size: 14px;
@@ -105,10 +105,10 @@ nav .fas{
   top: 12px;
   margin-left: 10px;
 }
-a:hover{
+nav a:hover{
   background: #eee;
 }
-a:hover i{
+nav a:hover i{
   color:orangered;
   transition: 0.5s;
 }

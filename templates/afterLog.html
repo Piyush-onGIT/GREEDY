@@ -3,97 +3,143 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dbugger</title>
-	<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'afterLog.css' %}">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<meta charset="UTF-8" />
+	<title>Dashboard</title>
+	<link rel="stylesheet" href="{% static 'afterlog.css' %}">
+
+	<!-- Font Awesome Cdn Link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
-	<div class="page-wrapper">
-		<div class="nav-wrapper">
-			<div class="grad-bar"></div>
-			<nav class="navbar">
-				<a href=""><img src="{% static 'images/dbugger_logo.png' %}" alt="DBugger"></a>
-				<div class="menu-toggle" id="mobile-menu">
-					<span class="bar"></span>
-					<span class="bar"></span>
-					<span class="bar"></span>
+	<div class="container">
+		<nav>
+			<ul>
+				<li><a href="#" class="logo">
+						<img src="{% static 'images/dbugger_logo.png' %}">
+
+					</a></li>
+				<li><a href="">
+						<i class="	fas fa-desktop"></i>
+						<span class="nav-item">Dashboard</span>
+					</a></li>
+				<li><a href="#">
+						<i class="	fas fa-file"></i>
+						<span class="nav-item">Assignments</span>
+					</a></li>
+				<li><a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=dbuggerhelp@gmail.com">
+						<i class="fas fa-envelope"></i>
+						<span class="nav-item">Mail Us</span>
+					</a></li>
+
+
+
+
+				<li><a href="/logout" class="logout">
+						<i class="fas fa-sign-out-alt"></i>
+						<span class="nav-item">Log out</span>
+					</a></li>
+			</ul>
+		</nav>
+
+		<div class="herosec">
+			<section class="main">
+				<div class="main-top">
+					<h1>Enrolled Courses</h1>
+					<i class="	fas fa-edit fa-lg"></i>
 				</div>
-				<ul class="nav no-search">
-					<li class="nav-item"><a href="#"></a></li>
-					<li class="nav-item"><a href="#"></a></li>
-					<li class="nav-item"><a href="#"></a></li>
-					<li class="nav-item"><a href="#"></a></li>
-					<li class="nav-item"><a href="/logout">Log Out</a></li>
-				</ul>
-			</nav>
+				<div class="users">
+					{% for number, name, image in data %}
+					<div class="card">
+						<img src="{{image}}">
+						<h4>{{name}}</h4>
+						<p>Educator - Piyush Kumar</p>
+						<div class="per">
+							<table>
+								<tr>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+						<a href="courses/{{number}}">
+							<button>View</button>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+			</section>
+
+			<section class="main">
+				<div class="main-top">
+					<h1>Available Courses</h1>
+					<i class="fas fa-edit fa-lg"></i>
+				</div>
+				<div class="users">
+					<div class="card">
+						<img src="{% static 'images/cpp.png' %}">
+						<h4>Introduction to C++</h4>
+						<p>Educator - Piyush Kumar</p>
+						<div class="per">
+							<table>
+								<tr>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+						<a href="/enroll/1">
+							<button>Enroll</button>
+						</a>
+					</div>
+					<div class="card">
+						<img src="{% static 'images/dev.jpg' %}">
+						<h4>Web-dev Course</h4>
+						<p>Educator - Anurag Deo </p>
+						<div class="per">
+							<table>
+								<tr>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+						<a href="/enroll/2">
+							<button>Enroll</button>
+						</a>
+					</div>
+					<div class="card">
+						<img src="{% static 'images/dsa.png' %}">
+						<h4>DSA (Upcoming)</h4>
+						<p>Educator - Viraj Chandra</p>
+						<div class="per">
+							<table>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+								</tr>
+							</table>
+						</div>
+						<a href="/enroll/3">
+							<button>Enroll</button>
+						</a>
+					</div>
+				</div>
+			</section>
 		</div>
-
-
-
-		<div class="header">
-
-			<svg viewBox="0 10 1320 350">
-				<text x="50%" y="50%" dy=".35em" text-anchor="middle">
-					My Courses
-				</text>
-			</svg>
-		</div>
-
-		<section class="features">
-			{% for number, name, image in data %}
-			<div class="feature-container">
-				<img src="{{image}}" alt="Flexbox Feature">
-				<h2><b>{{name}}</b></h2>
-				<p></p>
-				<a href="courses/{{number}}">
-					<button class="mybtn">View</button>
-				</a>
-			</div>
-			{% endfor %}
-		</section>
-
-		<div class="header">
-
-			<svg viewBox="0 10 1320 350">
-				<text x="50%" y="50%" dy=".35em" text-anchor="middle">
-					Our Courses
-				</text>
-			</svg>
-		</div>
-
-		<section class="features">
-			<div class="feature-container">
-				<img src="{% static 'images/cpp.png' %}" alt="Flexbox Feature">
-				<h2><b>Introduction to programming with C++</b></h2>
-				<p></p>
-				<a href="enroll">
-					<a href="/enroll/1"><button class="mybtn">Enroll Now</button></a>
-				</a>
-			</div>
-			<div class="feature-container">
-				<img src="{% static 'images/dsa.png' %}" alt="Flexbox Feature">
-				<h2><b>DSA Course(UPCOMING)</b></h2>
-				<p></p>
-				<a href="enroll">
-					<a href="/enroll/2"> <button class="mybtn">Enroll Now</button></a>
-				</a>
-			</div>
-			<div class="feature-container">
-				<img src="{% static 'images/dev.jpg' %}" alt="Flexbox Feature">
-				<h2><b>Web Development Course</b></h2>
-				<p></p>
-				<a href="enroll">
-					<a href="/enroll/3"><button class="mybtn">Enroll Now</button></a>
-				</a>
-			</div>
-		</section>
 	</div>
-	<script src="{% static 'afterlog.js' %}"></script>
+
+	<script src="script.js"></script>
 </body>
 
 </html>

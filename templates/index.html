@@ -47,7 +47,7 @@
 		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
 			<a href="" class="logo d-flex align-items-center">
-				<img src="{% static 'images/logo.png' %}" alt="logo">
+				<img src="{% static 'images/dbugger_logo.png' %}" alt="logo">
 				<span></span>
 			</a>
 
@@ -109,13 +109,19 @@
 						<div class="content">
 							<!-- <h3>Who We Are</h3> -->
 							<h3>There is Always One More Bug to Fix</h3>
-							<p>
+							<p class="temp">
 								Need help starting your Coding Journey? Look no further. Join our Coding Community to
 								recieve Premium
 								Coding Content along with Personal Guidance from your mentors who are proficient in
 								various domains like
 								Web Development, Competitive Programming, DSA and various other Programming Languages.
 							</p>
+							<style>
+								@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+								.temp {
+									font-family: Poppins;
+								}
+							</style>
 							<div class="text-center text-lg-start">
 								<!-- <a href="#"
 									class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
@@ -141,7 +147,7 @@
 			<div class="container" data-aos="fade-up">
 
 				<header class="section-header">
-					<h2>Our Courses</h2>
+					<h2 style="font-size:34px ; color:#013289;font-weight: 700;">Our Courses</h2>
 					<!-- <p>Recent posts form our Blog</p> -->
 				</header>
 
@@ -191,7 +197,7 @@
 			<div class="container" data-aos="fade-up">
 
 				<header class="section-header">
-					<h2>Services</h2>
+					<h2 style="font-size:34px ; color:#013289;font-weight:700;">Services</h2>
 					<!-- <p>Veritatis et dolores facere numquam et praesentium</p> -->
 				</header>
 
@@ -211,10 +217,10 @@
 
 					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
 						<div class="service-box orange">
-							<img src="{% static 'images/problems.png' %}">
+							<img  src="{% static 'images/problems.png' %}" >
 							<p></p>
 							<h3>Problem Sets</h3>
-							<p>Curated problem set will be provided to make your concepts clear</p>
+							<p>Curated problemset will be provided to make your concepts clear.</p>
 							<!-- <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
 						</div>
 					</div>
@@ -223,7 +229,7 @@
 						<div class="service-box green">
 							<img src="{% static 'images/doubts.png' %}">
 							<p></p>
-							<h3>Personalized doubt solving</h3>
+							<h3>Personalized Doubt Solving</h3>
 							<p>You can directly contact our educators and get your doubts cleared.</p>
 							<!-- <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a> -->
 						</div>
@@ -240,7 +246,7 @@
 			<div class="container" data-aos="fade-up">
 
 				<header class="section-header">
-					<h2>Contact</h2>
+					<h2></h2>
 					<p>Contact Us</p>
 				</header>
 
@@ -250,11 +256,13 @@
 
 						<div class="row gy-4">
 							<div class="col-md-6">
+								<a href="https://goo.gl/maps/i1iN2wST3TaeEFn98" target="_blank">
 								<div class="info-box">
 									<i class="bi bi-geo-alt"></i>
 									<h3>Address</h3>
 									<p>Hostel-H Sirpur<br>NIT Raipur</p>
 								</div>
+							</a>
 							</div>
 							<div class="col-md-6">
 								<div class="info-box">
@@ -264,11 +272,13 @@
 								</div>
 							</div>
 							<div class="col-md-6">
+								<a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=dbuggerhelp@gmail.com">
 								<div class="info-box">
 									<i class="bi bi-envelope"></i>
 									<h3>Email Us</h3>
 									<p>dbuggerhelp@gmail.com<br>piyush.at.googl@gmail.com</p>
 								</div>
+							</a>
 							</div>
 							<div class="col-md-6">
 								<div class="info-box">
@@ -310,7 +320,7 @@
 									<div class="error-message"></div>
 									<div class="sent-message">Your message has been sent. Thank you!</div>
 
-									<button type="submit">Send Message</button>
+									<button style="color:white;background-color:#013289;" type="submit">Send Message</button>
 								</div>
 
 							</div>
@@ -334,8 +344,8 @@
 				<div class="row gy-4">
 					<div class="col-lg-5 col-md-12 footer-info">
 						<a href="index.html" class="logo d-flex align-items-center">
-							<img src="{% static 'images/favicon.png' %}" alt="">
-							<span>Dbugger</span>
+							<img src="{% static 'images/dbugger_logo.png' %}" alt="">
+							<span></span>
 						</a>
 						<div class="social-links mt-3">
 							<a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -373,7 +383,7 @@
 		</div>
 	</footer><!-- End Footer -->
 
-	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+	<a style="background-color:#012970;" href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
 			class="bi bi-arrow-up-short"></i></a>
 
 	<!-- Vendor JS Files -->

@@ -1,104 +1,104 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dbugger</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>After Log</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 	<link href="{% static 'afterLog.css' %}" rel="stylesheet">
-</head>
-
+  </head>
 <body>
-	<nav>
-		<ul>
-			<li>
-				<div class="logo">
-					<a href="/">
-						<img style="height: 70px;margin-bottom: 50px;" src="{% static 'images/dbugger_logo.png' %}">
-					</a>
-				</div>
-			</li>
-			<li>
-				<a class="profile" style="background-color: ;" href="#">
-					<i class="fas fa-user"></i>
-					<span class="nav-item">Username</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class="fas fa-desktop"></i>
-					<span class="nav-item">Dashboard</span>
-				</a>
-			</li>
+    <nav>
+        <ul>
+            <li >
+              <div class="logo">
+                <a href="#">
+                    <img style="height: 70px;margin-bottom: 50px;" src="{% static 'images/dbugger_logo.png' %}">
+                </a>
+              </div>
+            </li>
+            <li>
+              <a class="profile" style="background-color: ;" href="#">
+                  <i class="fas fa-user" ></i>
+                  <span class="nav-item">Username</span>
+              </a>
+          </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-desktop" ></i>
+                    <span class="nav-item">Dashboard</span>
+                </a>
+            </li>
+           
+            <li>
+                <a href="#">
+                    <i class="	fas fa-file"></i>
+                    <span class="nav-item">Assignments</span>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:dbuggerhelp@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                    <span class="nav-item">Mail Us</span>
+                </a>
+            </li>
+            <li>
+                <a href="/logout" style="position: absolute; bottom:0;">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-			<li>
-				<a href="#">
-					<i class="	fas fa-file"></i>
-					<span class="nav-item">Assignments</span>
-				</a>
-			</li>
-			<li>
-				<a href="mailto:dbuggerhelp@gmail.com" target="_blank">
-					<i class="fas fa-envelope"></i>
-					<span class="nav-item">Mail Us</span>
-				</a>
-			</li>
-			<li>
-				<a href="/logout" style="position: absolute; bottom:0;">
-					<i class="fas fa-sign-out-alt"></i>
-					<span class="nav-item">Log out</span>
-				</a>
-			</li>
-		</ul>
-	</nav>
-
-	<div class="herosec">
-		<div class="main">
-			<div class="main-top">
-				<h1 style="color: #012970;">Enrolled Courses</h1>
-			</div>
-			<div class="users">
-				{% for number, name, image in data %}
-				<div class="card">
-					<img src="{{image}}" alt="">
-					<h3>{{name}}</h3>
-					<a href="/courses/{{number}}"><button>View</button></a>
-				</div>
-				{% endfor %}
-			</div>
-		</div>
-		<div class="main-course">
-			<h1>Available Courses</h1>
-			<div class="course-box">
-				<div class="course">
-					<div class="box">
-						<img src="{% static 'images/cpp.png' %}" alt="">
-						<h3>Introduction to C++</h3>
-						<a href="/enroll/1">
-							<button>Enroll</button>
-						</a>
-					</div>
-					<div class="box">
-						<img src="{% static 'images/dev.jpg' %}" alt="">
-						<h3>Web Dev(Upcoming)</h3>
-						<a href="/enroll/3">
-							<button>Enroll</button>
-						</a>
-					</div>
-					<div class="box">
-						<img src="{% static 'images/dsa.png' %}" alt="">
-						<h3>DSA(Upcoming)</h3>
-						<a href="/enroll/2">
-							<button>Enroll</button>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="herosec">
+        <div class="main">
+            <div class="main-top">
+                <h1 style="color: #012970;">Enrolled Courses</h1>
+            </div>
+            <div class="users">
+                <div class="card">
+                    <img src="{% static 'images/cpp.png' %}" alt="">
+                    <h3>Introduction to C++</h3>
+                    <a><button>View</button></a>
+                </div>
+                <div class="card">
+                    <img src="{% static 'images/dev.jpg' %}" alt="">
+                    <h3>Web-dev (Upcoming)</h3>
+                    <button>View</button>
+                </div>
+                <div class="card">
+                    <img src="{% static 'images/dsa.png' %}" alt="">
+                    <h3>DSA (Upcoming)</h3>
+                    <button>View</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-course">
+           <h1>Available Courses</h1>
+           <div class="course-box">
+            <div class="course">
+              <div class="box">
+                <img src="{% static 'images/cpp.png' %}" alt="">
+                <h3>Introduction to C++</h3>
+                 <button>Enroll</button>
+              </div>
+              <div class="box">
+                <img src="{% static 'images/dev.jpg' %}" alt="">
+                <h3>Webdev(Upcoming)</h3>
+                 <button>Enroll</button>
+              </div>
+              <div class="box">
+                <img src="{% static 'images/dsa.png' %}" alt="">
+                <h3>DSA(Upcoming)</h3>
+                 <button>Enroll</button>
+              </div>
+            </div>
+           </div>
+        </div>
+    </div>
 </body>
-
 </html>

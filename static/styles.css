@@ -8,12 +8,13 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
 :root {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins";
   color: #444444;
 }
 
@@ -33,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
 }
 
 /*--------------------------------------------------------------
@@ -197,7 +198,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: rgb(68, 26, 26);
-  font-family: "Popins", sans-serif;
+  font-family: "Poppins";
   margin-top: 3px;
 }
 
@@ -229,7 +230,7 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
   font-size: 16px;
   font-weight: 700;
   color:#012970;
@@ -476,7 +477,7 @@ section {
 }
 
 .hero .btn-get-started span {
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -576,7 +577,7 @@ section {
 }
 
 .about .btn-read-more span {
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -657,7 +658,7 @@ section {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
   font-size: 14px;
 }
 
@@ -970,7 +971,7 @@ section {
   font-size: 36px;
   color: #444444;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
 }
 
 .pricing .price sup {
@@ -1016,7 +1017,7 @@ section {
   transition: none;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
   font-weight: 600;
   transition: 0.3s;
   border: 1px solid #4154f1;
@@ -2319,7 +2320,7 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #012970;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
   margin-top: 3px;
 }
 
@@ -2327,7 +2328,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: "Poppins";
 }
 
 .footer .footer-top .social-links a {

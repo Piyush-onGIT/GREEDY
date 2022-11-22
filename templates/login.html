@@ -32,12 +32,12 @@
         {% csrf_token %}
         <h1 class="log-in">Log <span style="color:#F36527">In</span></h1>
         <div class="form__box">
-          <input type="text" class="form__input" placeholder="YOUR USERNAME" name="usnm">
+          <input required type="text" class="form__input" placeholder="YOUR USERNAME" name="usnm">
           <label for="" class="form__label">YOUR USERNAME</label>
           <div class="form__shadow"></div>
         </div>
         <div class="form__box">
-          <input type="text" class="form__input" placeholder="Password" name="passd">
+          <input required type="text" class="form__input" placeholder="Password" name="passd">
           <label for="" class="form__label">ENTER PASSWORD</label>
           <div class="form__shadow"></div>
         </div>

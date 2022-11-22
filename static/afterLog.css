@@ -1,5 +1,5 @@
-/*  import google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+
 *{
   margin: 0;
   padding: 0;
@@ -9,81 +9,37 @@
   box-sizing: border-box;
   font-family: "Poppins";
 }
+
 body{
-  background: rgb(226, 226, 226);
+  background: #dfe9f5;
+  color: #012970;
+ 
 }
-/* body.dark {
+
+body.dark{
   background-color: #292c35;
-} */
-.checkbox {
-  opacity: 0;
-  position: absolute;
 }
 
-.label {
-  width: 20px;
-  height: 16px;
-  background-color:#111;
-  display: flex;
-  border-radius:50px;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  position: relative;
-  transform: scale(1.5);
-}
-
-.ball {
-  width: 12px;
-  height: 12px;
-  background-color: white;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  border-radius: 50%;
-  transition: transform 0.2s linear;
-}
-
-/*  target the elemenent after the label*/
-/* .checkbox:checked + .label .ball{
-  transform: translateX(24px);
-} */
-
+/* NAVBAR */
 
 nav{
-  position: sticky;
+  position: fixed;
   top: 0;
   bottom: 0;
   height: 100vh;
   left: 0;
-  width: 70px;
-  /* width: 280px; */
+  width: 88px;
   background: #fff;
   overflow: hidden;
   transition: 1s;
 }
+
 nav:hover{
   width: 280px;
   transition: 1s;
 }
-.logo{
-  text-align: left;
-  display: flex;
-  margin: 10px 0 0 10px;
-  margin-left: -3px;
-  padding-bottom: 3rem;
-}
 
-.logo img{
-  width: 70%;
- 
-}
-.logo span{
-  font-weight: bold;
-  padding-left: 15px;
-  font-size: 18px;
-  text-transform: uppercase;
-}
+
 nav a{
   position: relative;
   width: 280px;
@@ -91,7 +47,12 @@ nav a{
   color: rgb(85, 83, 83);
   display: table;
   padding: 10px;
+  font-family: "Poppins";
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
 }
+
 nav .fas{
   position: relative;
   width: 70px;
@@ -100,218 +61,192 @@ nav .fas{
   font-size: 20px;
   text-align: center;
 }
+
 .nav-item{
   position: relative;
-  top: 12px;
+  margin-top: 16px;
   margin-left: 10px;
+
 }
+
 nav a:hover{
   background: #eee;
+  color: orangered;
 }
+
 nav a:hover i{
   color:orangered;
   transition: 0.5s;
 }
+
 .logout{
   position: absolute;
   bottom: 0;
 }
 
-.container{
+/* HEROSEC */
+
+.herosec{
   display: flex;
+  flex-direction: column;
+  padding: 25px;
+  margin-left: 15vw;
 }
 
-/* MAin Section */
 .main{
-  position: relative;
-  padding: 20px;
-  width: 100%;
-}
-.main-top{
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  padding: 25px;
+  color: #012970;
 }
-.main-top i{
-  position: absolute;
-  right: 0;
-  margin: 10px 30px;
-  color: rgb(110, 109, 109);
-  cursor: pointer;
-}
-.main-top h1{
- color: #012970;
-}
-.main .users{
+
+
+.users{
   display: flex;
-  width: 100%;
+  flex-wrap: wrap;
 }
-.users .card{
-  width: 25%;
-  margin: 10px;
+
+
+.card{
+  width: 300px;
+  margin: 20px 10px;
   background: #fff;
   text-align: center;
   border-radius: 10px;
   padding: 10px;
   box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
+ 
   transition: all .3s ease-in-out;
 }
-.users .card:hover{
+
+.card:hover{
   box-shadow: -3px 18px 20px 0px rgba(99,89,99,1);
+  transform: scale(1.01);
 }
-.users .card img{
+
+.card img{
   width: 100%;
-  height: 50%;
- 
+  height: 60%;
 }
+
 .users .card h4{
   text-transform: uppercase;
   color: #012970;
 }
-.users .card p{
-  font-size: 12px;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  color: orangered;
-}
-.users table{
-  margin:  auto;
-}
-.users .per span{
-  padding: 5px;
-  border-radius: 10px;
-  background: rgb(223, 223, 223);
-}
-.users td{
-  font-size: 14px;
-  padding-right: 15px;
-}
-.users .card button{
+
+.card button{
   width: 100%;
-  margin-top: 0px;
+  margin-top: 10px;
   padding: 7px;
   cursor: pointer;
-  border-radius: 10px;
-  background: transparent;
-  border: 1px solid #012970;
+  background: orangered;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
 }
+
 .users .card button:hover{
-  background: #012970;
+  background: rgba(255, 68, 0, 0.911);
   color: #fff;
   transition: 0.5s;
 }
-.herosec{
+@media(max-width:400px){
+  h1{
+    font-size: 20px;
+  }
+  .card h3{
+    font-size: 12px;
+  }
+  .card button{
+    font-size: 10px;
+    padding: 4px;
+  }
+}
+/*course box */
+.main-course{
+  margin-top: 20px;
+  text-transform: capitalize;
   display: flex;
   flex-direction: column;
-  width: 80vw;
-  margin-left: 15vw;
+  padding: 25px;
+  
+ 
 }
-@media (max-width: 1313px) {
-  .users .card{
-    border-radius: 10px;
+.course-box{
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+}
+.course-box .course{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+  
+}
+.box{
+  width: 25%;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+  background:rgb(235,233,233);
+  box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
+ 
+  transition: all .3s ease-in-out;
+}
+.box:hover{
+  box-shadow: -3px 18px 20px 0px rgba(99,89,99,1);
+}
+.box p{
+  font-size: 12px;
+  margin-top: 5px;
+
+}
+.box button{
+  background: orangered;
+  color: white;
+  padding: 7px 10px;
+  margin-top: 2rem;
+  cursor: pointer;
+}
+.box button:hover{
+  background: rgba(255, 68, 0, 0.911);
+}
+
+.box img{
+  width: 100%;
+}
+@media(max-width:1000px){
+  .course-box .course{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+   flex-direction: column; 
   }
-  .users .card img{
-    width: 100%;
-    height: 45%;
-   
-  }
-  .users .card h4{
-    text-transform: uppercase;
-    color: #012970;
-  }
-  .users .card p{
+  .card h3{
     font-size: 10px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    color: orangered;
   }
-  .users td{
-    font-size: 12px;
-    padding-right: 15px;
+  .course-box{
+    width: 80%;
   }
-}
-@media (max-width: 1113px) {
-  .users .card{
-    border-radius: 10px;
-  }
-  .users .card img{
-    width: 100%;
-    height: 40%;
-   
-  }
-  .users .card h4{
-    text-transform: uppercase;
-    color: #012970;
-  }
-  .users .card p{
-    font-size: 10px;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    color: orangered;
-  }
-  .users td{
-    font-size: 12px;
-    padding-right: 15px;
-  }
-  .users .card button{
-    width: 100%;
-    margin-top: 4px;
-    padding: 7px;
-    cursor: pointer;
-    border-radius: 10px;
-    background: transparent;
-    border: 1px solid #012970;
-  }
-  .users .card button:hover{
-    background: #012970;
-    color: #fff;
-    transition: 0.5s;
-  }
-  .herosec{
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    margin-left: 0vw;
-  }
-}
-@media (max-width: 900px) {
-  .herosec{
-    display: flex;
-    flex-direction: column;
-    width: 80vw;
-    margin-left: 0vw;
-  }
-  .main .users{
-    position: relative;
-    padding: 20px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  .users .card{
+  .box{
     width: 55%;
-    margin: 10px;
-    background: #fff;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
-    transition: all .3s ease-in-out;
   }
+
 }
-@media (max-width: 500px) {
-  .users .card{
-    width: 85%;
-    margin: 10px;
-    background: #fff;
-    text-align: center;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: -3px 6px 5px 0px rgba(176,164,176,1);
-    transition: all .3s ease-in-out;
+@media(max-width:500px){
+  .box{
+    width: 95%;
   }
-  .logo img{
-    width: 50%;
-   
-   
-  }
+  .main-course{
+    align-items: center;
+      
+     
+    }
 }

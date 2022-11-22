@@ -60,19 +60,31 @@ def edit(request):
     db.addUser("piyush", "xyz", "abcd")
     return render(request, "index.html")
 
+def checkSpace(name):
+    for i in name:
+        if i == ' ':
+            return True
+    return False
+
 def signup(request):
     d = request.POST
-    print(d)
+    # print(d)
     name = d['fname'] + " " + d["lname"]
     usnm = d['usnm']
     mail = d['email']
     passd = d['passd']
     repass = d['re-passd']
 
+    space = checkSpace(usnm)
+
     if (passd != repass):
         # unmatched password
         messages.info(request, 2)
-        return render(request, "index.html")
+        return render(request, "signup.html")
+
+    if (space):
+        messages.info(request, 7)
+        return render(request, "signup.html")
 
     check1 = db.check_username(usnm)
     check2 = db.check_mail(mail)
@@ -80,13 +92,14 @@ def signup(request):
     if check1:
         # username exists
         messages.info(request, 1)
-        return render(request, "index.html")
+        return render(request, "signup.html")
     
     if check2:
         # email exists
         messages.info(request, 3)
-        return render(request, "index.html")
+        return render(request, "signup.html")
 
+    messages.info(request, 8)
     db.addUser(name, usnm, mail, passd)
     return redirect("/log")
 

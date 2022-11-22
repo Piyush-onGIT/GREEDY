@@ -7,10 +7,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="{% static 'signup.css' %}">
   <link rel="stylesheet" href="{% static 'signupstyle.css' %}">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <title>Sign Up</title>
 </head>
 
 <body>
+  {% if messages %} {% for msg in messages %}
+  <script>
+    console.log("{{msg}}");
+    if ("{{msg}}" == 1) {
+      swal({
+        "title": "Alert",
+        "text": "Username already exists",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then(() => {
+        history.back();
+      });
+    }
+    else if ("{{msg}}" == 2) {
+      swal({
+        "title": "Alert",
+        "text": "Password doesn't match",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then(() => {
+        history.back();
+      });
+    }
+    else if ("{{msg}}" == 3) {
+      swal({
+        "title": "Alert",
+        "text": "Email-id already exists",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then(() => {
+        history.back();
+      });
+    }
+    else if ("{{msg}}" == 7) {
+      swal({
+        "title": "Alert",
+        "text": "Username must not contain spaces",
+        "icon": "warning",
+        "button": "Go Back"
+      }).then(() => {
+        history.back();
+      });
+    }
+  </script>
+  {% endfor %} {% endif %}
+
   <div class="main-container">
     <div class="left-section">
       <div class="left-section-logo1">

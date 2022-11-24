@@ -1,5 +1,0 @@
-import hashlib
-
-x = str(input())
-hashed = hashlib.md5(x.encode()).hexdigest()
-print(hashed)

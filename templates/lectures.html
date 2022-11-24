@@ -16,14 +16,14 @@
 		<div class="nav-wrapper">
 			<div class="grad-bar"></div>
 			<nav class="navbar">
-			<a href="/">	<img src="{% static 'images/dbugger_logo.png' %}" alt="DBugger"></a>
+				<a href="/"> <img src="{% static 'images/dbugger_logo.png' %}" alt="DBugger"></a>
 				<div class="menu-toggle" id="mobile-menu">
 					<span class="bar"></span>
 					<span class="bar"></span>
 					<span class="bar"></span>
 				</div>
 				<ul class="nav no-search">
-					<li class="nav-item"><button><a href="/myCourses">My Courses</a></button></li>
+					<li class="nav-item"><button><a href="/">My Courses</a></button></li>
 					<li class="nav-item"><button><a href="/logout">Log Out</a></button></li>
 				</ul>
 			</nav>
@@ -34,12 +34,11 @@
 	</div>
 	<div id="playlist">
 
-		<div id="video-dis">
-			<iframe id="display-frame" src="" title="YouTube video player" frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen wmode="transparent"></iframe>
-		</div>
-
+			<div id="video-dis">
+				<iframe id="display-frame" src="" title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen wmode="transparent"></iframe>
+			</div>
 		<div id="v-list" class="video-li">
 
 			<div id="vli-info">

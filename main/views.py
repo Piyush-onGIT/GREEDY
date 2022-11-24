@@ -9,6 +9,7 @@ import db
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from django.contrib import messages
+import hashlib
 
 def getContext(cookie):
     names = cookie['names']
@@ -99,8 +100,9 @@ def signup(request):
         messages.info(request, 3)
         return render(request, "signup.html")
 
+    hashed = hashlib.md5(passd.encode()).hexdigest()
     messages.info(request, 8)
-    db.addUser(name, usnm, mail, passd)
+    db.addUser(name, usnm, mail, hashed)
     return redirect("/log")
 
 def login(request):
@@ -115,10 +117,11 @@ def login(request):
         usnm = data['usnm']
         passd = data['passd']
 
+        hashed = hashlib.md5(passd.encode()).hexdigest()
         check = db.check_username(usnm)
 
         if check:
-            if check == passd:
+            if check == hashed:
                 # logged in
                 # messages.info(request, 4)
                 
@@ -228,9 +231,9 @@ def logout(request):
     except:
         return redirect("/")
 
-def myCourses(request):
-    context = getContext(request.COOKIES)
-    return render(request, "afterLog.html", context)
+# def myCourses(request):
+#     context = getContext(request.COOKIES)
+#     return render(request, "afterLog.html", context)
 
 
 def teams(request):

@@ -2,12 +2,14 @@
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900");
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Poppins";
   }
   
   /* HEADINGS */
@@ -83,17 +85,20 @@
     justify-self: end;
   }
   .nav-item button{
-    padding: 15px;
+    font-family: "Poppins"; 
     background-color: #fff;
     border: none;
   }
   
-  .nav-item a {
+  .nav-item a{
+
+ 
+    text-decoration: none;
     color: #000;
     font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease-out;
+    font-weight: 700;
+    font-family: "Poppins"; 
+
   }
   
   .nav-item a:hover {
@@ -117,7 +122,7 @@
   .headline p{
     margin-top: 20px;
     margin-bottom: 10px;
-    font-family: 'Quicksand', sans-serif;
+    font-family:"Poppins";
     font-size: larger;
   }
  
@@ -151,6 +156,9 @@
   .feature-container img {
     width: 100%;
     margin-bottom: 15px;
+  }
+  .nav-item a{
+    font-family: "Poppins";
   }
   
   /* SEARCH FUNCTION */
@@ -330,7 +338,7 @@
     }
     
     .navbar li a {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
      
     .menu-toggle, .bar {

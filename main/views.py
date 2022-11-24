@@ -88,7 +88,7 @@ def signup(request):
         return render(request, "index.html")
 
     db.addUser(name, usnm, mail, passd)
-    return login(request)
+    return redirect("/log")
 
 def login(request):
     cookie = request.COOKIES

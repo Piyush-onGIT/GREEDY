@@ -56,7 +56,6 @@ def enroll(course, usnm):
     wks = sheet.worksheet("enrolled")
     n = rows("enrolled")
     data = list(wks.get_all_values())
-
     data.pop(0)
     allEnrolled = []
     for i in data:

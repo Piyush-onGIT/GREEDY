@@ -61,12 +61,12 @@
 			</div>
 
 			<div id="vli-videos">
-				{% for number, link in data %}
+				{% for number, link, thumb in data %}
 				<div class="video-con active-con" video="{{link}}">
 					<div class="index title">0</div>
-					<!-- <div class="thumb">
-						<img src="https://i.ytimg.com/vi/BVyTt3QJfIA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDNZqTQuBOTuGgLFnsrstzTBdJhgg" alt="">
-					  </div> -->
+					<div class="thumb">
+						<img style="height: 100%;" src="{{thumb}}" alt="">
+					  </div>
 					<div class="v-titles">
 						<div class="title">Lecture {{number}} </div>
 						<!-- <div class="sub-title">

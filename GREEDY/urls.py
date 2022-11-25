@@ -28,7 +28,7 @@ urlpatterns = [
     path("enroll/<int:course_id>", mv.enroll),
     path("courses/<int:course_id>", mv.course),
     path("logout", mv.logout),
-    path("myCourses", mv.myCourses),
+    # path("myCourses", mv.myCourses),
     path("our-team", mv.teams),
     path("log", mv.log),
     path("reg", mv.reg)

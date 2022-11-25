@@ -89,6 +89,9 @@ body {
   }
 }
 
-
-
+@media  screen and (min-width: 1430px){
+  .left-section {
+    width: 54%;
+  }
+}
 

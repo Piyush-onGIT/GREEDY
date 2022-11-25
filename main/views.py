@@ -9,6 +9,7 @@ import db
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from django.contrib import messages
+import hashlib
 
 def getContext(cookie):
     names = cookie['names']
@@ -60,19 +61,31 @@ def edit(request):
     db.addUser("piyush", "xyz", "abcd")
     return render(request, "index.html")
 
+def checkSpace(name):
+    for i in name:
+        if i == ' ':
+            return True
+    return False
+
 def signup(request):
     d = request.POST
-    print(d)
+    # print(d)
     name = d['fname'] + " " + d["lname"]
     usnm = d['usnm']
     mail = d['email']
     passd = d['passd']
     repass = d['re-passd']
 
+    space = checkSpace(usnm)
+
     if (passd != repass):
         # unmatched password
         messages.info(request, 2)
-        return render(request, "index.html")
+        return render(request, "signup.html")
+
+    if (space):
+        messages.info(request, 7)
+        return render(request, "signup.html")
 
     check1 = db.check_username(usnm)
     check2 = db.check_mail(mail)
@@ -80,14 +93,16 @@ def signup(request):
     if check1:
         # username exists
         messages.info(request, 1)
-        return render(request, "index.html")
+        return render(request, "signup.html")
     
     if check2:
         # email exists
         messages.info(request, 3)
-        return render(request, "index.html")
+        return render(request, "signup.html")
 
-    db.addUser(name, usnm, mail, passd)
+    hashed = hashlib.md5(passd.encode()).hexdigest()
+    messages.info(request, 8)
+    db.addUser(name, usnm, mail, hashed)
     return redirect("/log")
 
 def login(request):
@@ -96,16 +111,17 @@ def login(request):
     try:
         if (cookie['login'] == '1'):
             context = getContext(cookie)
-            return render(request, "afterLog.html", context)
+            return render(request, "aferLog.html", context)
     except:
         data = request.POST
         usnm = data['usnm']
         passd = data['passd']
 
+        hashed = hashlib.md5(passd.encode()).hexdigest()
         check = db.check_username(usnm)
 
         if check:
-            if check == passd:
+            if check == hashed:
                 # logged in
                 # messages.info(request, 4)
                 
@@ -215,9 +231,9 @@ def logout(request):
     except:
         return redirect("/")
 
-def myCourses(request):
-    context = getContext(request.COOKIES)
-    return render(request, "afterLog.html", context)
+# def myCourses(request):
+#     context = getContext(request.COOKIES)
+#     return render(request, "afterLog.html", context)
 
 
 def teams(request):

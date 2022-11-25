@@ -48,9 +48,11 @@ nav a{
   display: table;
   padding: 10px;
   font-family: "Poppins";
-  margin-top: 15px;
+  margin-top: 0px;
   display: flex;
   align-items: center;
+  
+  
 }
 
 nav .fas{
@@ -76,7 +78,7 @@ nav a:hover{
 
 nav a:hover i{
   color:orangered;
-  transition: 0.5s;
+  transition: 0.8s;
 }
 
 .logout{
@@ -244,9 +246,33 @@ nav a:hover i{
   .box{
     width: 95%;
   }
+  .course-box{
+    width: 95%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+  }
   .main-course{
     align-items: center;
-      
-     
+    
+    }
+    nav{
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      height: 100vh;
+      left: 0;
+      width: 88px;
+      background: #fff;
+      overflow: hidden;
+      transition: 1s;
+    }
+    .logout{
+      position: absolute;
+      bottom: 5vh;
     }
 }

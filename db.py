@@ -112,3 +112,17 @@ def getLectures(course):
         # links: [[ith lecture number, ith lecture link, ith thumbnail link], ...]
 
     return links
+
+def getName(username):
+    wks = sheet.worksheet("users")
+    data = wks.get_all_records()
+
+    for i in data:
+        if i['username'] == username:
+            name = ""
+            for j in str(i["full name"]):
+                if j == " ":
+                    break
+                else:
+                    name += j
+            return name

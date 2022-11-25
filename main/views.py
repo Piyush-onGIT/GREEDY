@@ -15,6 +15,7 @@ def getContext(cookie):
     names = cookie['names']
     number = cookie['number']
     images = cookie['images']
+    fname = cookie['fname']
 
     names = names[1:]
     names = names.rstrip(names[-1])
@@ -40,7 +41,7 @@ def getContext(cookie):
         images[i] = images[i][1:]
         images[i] = images[i].rstrip(images[i][-1])
 
-    context = {"data": zip(number, names, images)}
+    context = {"data": zip(number, names, images), "fname": fname}
     return context
 
 def home(request):
@@ -136,8 +137,9 @@ def login(request):
                     name.append(details[0])
                     image.append(details[1])
 
+                fname = db.getName(usnm)
                 final = zip(number, name, image)
-                context = {"data": final}
+                context = {"data": final, "fname": fname}
                 response = render(request, "afterLog.html", context)
 
                 # cookies
@@ -146,7 +148,7 @@ def login(request):
                 response.set_cookie("names", name)
                 response.set_cookie("images", image)
                 response.set_cookie("number", number)
-
+                response.set_cookie("fname", fname)
 
                 return response
             else:

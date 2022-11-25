@@ -247,4 +247,7 @@ nav a:hover i{
   .main-course{
     align-items: center;
     }
+    .course-box{
+      width: 95%;
+    }
 }

@@ -78,8 +78,8 @@
   
   .navbar ul {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2,1.5fr);
+    display:flex;
+    margin-right: 8px;
     justify-self: end;
   }
   .nav-item button{
@@ -89,9 +89,9 @@
   }
   
   .nav-item a {
-    color: #000;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
+    color:#012970;
     text-decoration: none;
     transition: color 0.3s ease-out;
   }
@@ -318,6 +318,8 @@
       text-align: center;
       overflow: hidden;
       z-index: 1;
+  
+      
     }
     
     .navbar li {
@@ -546,6 +548,14 @@ a.channel:hover {
     height: 60vh;
   }
 } */
+@media only screen and (max-width: 1012px) {
+  #vli-info {
+    padding: 0px;
+    height: 80px;
+    width: 250px;
+    
+    }
+}
  @media only screen and (max-width: 950px) {
   #playlist{
     display: flex;
@@ -572,6 +582,12 @@ a.channel:hover {
       no-repeat center;
     background-size: 100%;
   } 
+  #vli-info {
+    padding: 0px;
+    height: 80px;
+    width: 250px;
+    
+    }
 } 
  @media only screen and (max-width: 800px) {
   #video-dis {
@@ -590,7 +606,7 @@ a.channel:hover {
   #vli-info {
     padding: 0px;
     height: 80px;
-    width: 150px;
+    width: 250px;
     
     }
 } 
@@ -624,8 +640,9 @@ a.channel:hover {
     margin-left: 5%;
   }
   #vli-info {
-  padding: 0px;
-  height: 80px;
-  width: 160px;
-  }
+    padding: 0px;
+    height: 80px;
+    width: 250px;
+    
+    }
 }

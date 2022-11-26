@@ -1,0 +1,204 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /* Color mode HSL & RGB */
+  --first-color: #F36527 ;
+  --white-color: #fff;
+  --black-color: #000;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: 'Poppins', sans-serif;
+  --normal-font-size: .838rem;
+  --tiny-font-size: .523rem;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 968px) {
+  :root {
+    --normal-font-size: .838rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+/*=============== MODERN INPUT ===============*/
+
+.log-in{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 1.6rem;
+}
+
+.form__content {
+  display: grid;
+  row-gap: 1.1rem;
+}
+
+.form__input, 
+.form__label, 
+.form__submit {
+  border: 0;
+  outline: none;
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+
+.form__box {
+  width: 380px;
+  height: 48px;
+  position: relative;
+}
+.form__box-name {
+    width: 180px;
+    height: 48px;
+    position: relative;
+}
+
+.form__shadow {
+  position: absolute;
+  width: 100%;
+  height: 95%;
+  background-color: var(--black-color);
+}
+
+.form__input {
+  position: absolute;
+  border: 2.5px solid var(--black-color);
+  background-color: var(--white-color);
+  width: 100%;
+  height: 95%;
+  z-index: 10;
+  padding: 12px;
+  transition: transform .3s;
+}
+
+.form__input::placeholder {
+  transition: opacity .5s;
+}
+
+.form__label {
+  z-index: 100;
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  font-size: var(--tiny-font-size);
+  font-weight: 600;
+  transition: .2s;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.form__button {
+  justify-self: flex-end;
+  background-color: var(--black-color);
+}
+
+.form__submit {
+  padding: .875rem 1.5rem;
+  color: var(--black-color);
+  background-color: var(--first-color);
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.form__submit:hover {
+  transform: translate(-6px, -6px);
+}
+
+/* Opaque placeholder */
+.form__input:focus::placeholder {
+  opacity: 0;
+  transition: .3s;
+}
+
+/* Move input and sticky input up */
+.form__input:focus, 
+.form__input:not(:placeholder-shown).form__input:not(:focus) {
+  transform: translate(-8px, -8px);
+  padding: 28px 18px 18px;
+  animation: input-animation .5s;
+}
+
+/* Move label and sticky label up */
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) + .form__label {
+  opacity: 1;
+  top: .5px;
+  left: 12px;
+  transition: .3s;
+}
+
+.log-in-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.log-in-section a{
+    color: #F36527;
+    font-weight: 1000;
+    text-decoration: none;
+}
+
+.not-a-member{
+  margin-right: 1em;
+}
+
+/* Input bounce animation */
+@keyframes input-animation {
+  0% {
+    transform: translate(0);
+  }
+  40% {
+    transform: translate(-9px, -9px);
+  }
+  60% {
+    transform: translate(-7px, -7px);
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 450px) {
+  .form__content, 
+  .form__box 
+  .log-in-section {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 350px) {
+  .form__content, 
+  .form__box 
+  .log-in-section {
+    width: 100%;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 968px) {
+  .form__content {
+    zoom: 1.1;
+  }
+}

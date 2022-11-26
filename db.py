@@ -106,10 +106,11 @@ def getLectures(course):
         lst.append(i[0])
         lst.append(i[1])
         lst.append(i[2])
-        # lst : [lecture number, lecture link, thumbnail link]
+        lst.append(i[3])
+        # lst : [lecture number, lecture link, thumbnail link, attachment link]
 
         links.append(lst)
-        # links: [[ith lecture number, ith lecture link, ith thumbnail link], ...]
+        # links: [[ith lecture number, ith lecture link, ith thumbnail link, ith attachment link], ...]
 
     return links
 

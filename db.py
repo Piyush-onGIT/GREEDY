@@ -3,13 +3,13 @@ from pickletools import read_uint1
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
+import pytz
 
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("dsa.json", scope)
 opener = gspread.authorize(creds)
 sheet = opener.open("DSA-BOOTCAMP")
-
 
 def rows(work):
     wks = sheet.worksheet(work)
@@ -23,8 +23,12 @@ def addUser(fname, name, email, pswd):
     wks = sheet.worksheet("users")
     n = rows("users")
     n += 2
-    dt = datetime.now()
-    dt.strftime("%d-%m-%Y %H:%M:%S")
+
+    UTC = pytz.utc
+    timeZ_Kl = pytz.timezone('Asia/Kolkata')
+    dt_Kl = datetime.now(timeZ_Kl)
+    utc_Kl = dt_Kl.astimezone(UTC)
+    dt = dt_Kl.strftime('%Y-%m-%d %H:%M:%S')
     
     wks.update_cell(n, 1, name)
     wks.update_cell(n, 2, fname)

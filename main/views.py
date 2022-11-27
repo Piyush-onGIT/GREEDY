@@ -198,7 +198,7 @@ def enroll(request, course_id):
 
 def course(request, course_id):
     cookie = request.COOKIES
-    # db.traffic(str(cookie["username"]), "lectures.html")
+    # db.traffic(str(cookie["username"]), course_id)
     try:
         if (cookie["login"] == "1"):
             course = "course" + str(course_id)
@@ -212,7 +212,7 @@ def course(request, course_id):
 
             if str(course_id) in enrolled:
                 context = {"data": lecs, "name": name}
-                db.traffic(str(cookie["username"]), "lectures.html")
+                db.traffic(str(cookie["username"]), str(course_id))
 
                 return render(request, "lectures.html", context)
             else:

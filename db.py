@@ -151,5 +151,4 @@ def traffic(username, id):
         wks.update_cell(len(data) + 2, 2, 1)
         wks.update_cell(len(data) + 2, 1, username)
     else:
-        # print(row, value)
         wks.update_cell(row + 1, 2, value + 1)

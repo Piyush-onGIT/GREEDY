@@ -131,3 +131,25 @@ def getName(username):
                 else:
                     name += j
             return name
+
+# function to record number of visits in a page by any user
+def traffic(username, page):
+    wks = sheet.worksheet("traffic")
+    data = wks.get_all_records()
+    
+    row = 0
+    value = 0
+
+    for i in range(len(data)):
+        if data[i]['username'] == username:
+            row = i + 1
+            value = data[i][page]
+            break
+
+
+    if row == 0:
+        wks.update_cell(len(data) + 2, 2, 1)
+        wks.update_cell(len(data) + 2, 1, username)
+    else:
+        # print(row, value)
+        wks.update_cell(row + 1, 2, value + 1)

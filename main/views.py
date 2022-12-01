@@ -249,3 +249,9 @@ def log(request):
 
 def reg(request):
     return render(request, "signup.html")
+
+def quiz(request):
+    cook = request.COOKIES
+    quiz = db.getQuiz()
+    context = {"fname": cook['fname'], "data": quiz}
+    return render(request, "quiz.html", context)

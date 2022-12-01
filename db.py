@@ -152,3 +152,18 @@ def traffic(username, id):
         wks.update_cell(len(data) + 2, 1, username)
     else:
         wks.update_cell(row + 1, 2, value + 1)
+
+def getQuiz():
+    wks = sheet.worksheet("Quiz")
+    data = wks.get_all_records()
+
+    name = []
+    link = []
+
+    for i in data:
+        name.append(i['name'])
+        link.append(i['link'])
+
+    final = zip(name, link)
+    # print(name)
+    return final

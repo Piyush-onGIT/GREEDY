@@ -60,16 +60,14 @@
 
     <div class="hero-quiz">
         <h1>Quizzes</h1>
-        <div class="links">
-            
-            <!-- <iframe
-                src=
-                width="640" height="1936" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
-            <ul>
-                {% for name, link in data %}
-                    <li><a target="_blank" style="text-decoration: none;" href="{{link}}">{{name}}</a></li>
-                {% endfor %}
-            </ul>
+        <div class="link-col">
+            {% for name, link in data %}
+            <div class="links">
+                <ul>
+                    <li><a target="_blank" style="text-decoration: none;color: black;" href="{{link}}">{{name}}</a></li>
+                </ul>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </body>

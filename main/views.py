@@ -198,6 +198,7 @@ def enroll(request, course_id):
 
 def course(request, course_id):
     cookie = request.COOKIES
+    # db.traffic(str(cookie["username"]), course_id)
     try:
         if (cookie["login"] == "1"):
             course = "course" + str(course_id)
@@ -211,6 +212,8 @@ def course(request, course_id):
 
             if str(course_id) in enrolled:
                 context = {"data": lecs, "name": name}
+                db.traffic(str(cookie["username"]), str(course_id))
+
                 return render(request, "lectures.html", context)
             else:
                 return redirect("/")
@@ -246,3 +249,9 @@ def log(request):
 
 def reg(request):
     return render(request, "signup.html")
+
+def quiz(request):
+    cook = request.COOKIES
+    quiz = db.getQuiz()
+    context = {"fname": cook['fname'], "data": quiz}
+    return render(request, "quiz.html", context)

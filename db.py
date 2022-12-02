@@ -3,13 +3,13 @@ from pickletools import read_uint1
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
+import pytz
 
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("dsa.json", scope)
 opener = gspread.authorize(creds)
 sheet = opener.open("DSA-BOOTCAMP")
-
 
 def rows(work):
     wks = sheet.worksheet(work)
@@ -23,8 +23,12 @@ def addUser(fname, name, email, pswd):
     wks = sheet.worksheet("users")
     n = rows("users")
     n += 2
-    dt = datetime.now()
-    dt.strftime("%d-%m-%Y %H:%M:%S")
+
+    UTC = pytz.utc
+    timeZ_Kl = pytz.timezone('Asia/Kolkata')
+    dt_Kl = datetime.now(timeZ_Kl)
+    utc_Kl = dt_Kl.astimezone(UTC)
+    dt = dt_Kl.strftime('%Y-%m-%d %H:%M:%S')
     
     wks.update_cell(n, 1, name)
     wks.update_cell(n, 2, fname)
@@ -106,10 +110,11 @@ def getLectures(course):
         lst.append(i[0])
         lst.append(i[1])
         lst.append(i[2])
-        # lst : [lecture number, lecture link, thumbnail link]
+        lst.append(i[3])
+        # lst : [lecture number, lecture link, thumbnail link, attachment link]
 
         links.append(lst)
-        # links: [[ith lecture number, ith lecture link, ith thumbnail link], ...]
+        # links: [[ith lecture number, ith lecture link, ith thumbnail link, ith attachment link], ...]
 
     return links
 
@@ -126,3 +131,39 @@ def getName(username):
                 else:
                     name += j
             return name
+
+# function to record number of visits in a page by any user
+def traffic(username, id):
+    wks = sheet.worksheet("traffic")
+    data = wks.get_all_records()
+    
+    row = 0
+    value = 0
+
+    for i in range(len(data)):
+        if data[i]['username'] == username:
+            row = i + 1
+            value = data[i][id]
+            break
+
+
+    if row == 0:
+        wks.update_cell(len(data) + 2, 2, 1)
+        wks.update_cell(len(data) + 2, 1, username)
+    else:
+        wks.update_cell(row + 1, 2, value + 1)
+
+def getQuiz():
+    wks = sheet.worksheet("Quiz")
+    data = wks.get_all_records()
+
+    name = []
+    link = []
+
+    for i in data:
+        name.append(i['name'])
+        link.append(i['link'])
+
+    final = zip(name, link)
+    # print(name)
+    return final

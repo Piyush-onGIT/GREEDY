@@ -31,5 +31,6 @@ urlpatterns = [
     # path("myCourses", mv.myCourses),
     path("our-team", mv.teams),
     path("log", mv.log),
-    path("reg", mv.reg)
+    path("reg", mv.reg),
+    path("quizzes", mv.quiz)
 ]

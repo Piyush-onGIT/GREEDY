@@ -49,7 +49,7 @@ def home(request):
     try:
         if cookie["login"] == "1":
             context = getContext(cookie)
-            return render(request, "afterLog.html", context)
+            return render(request, "afterLogcopy.html", context)
         else:
             print("redirected")
             return render(request, "index.html")
@@ -112,7 +112,7 @@ def login(request):
     try:
         if (cookie['login'] == '1'):
             context = getContext(cookie)
-            return render(request, "aferLog.html", context)
+            return render(request, "afterLogcopy.html", context)
     except:
         data = request.POST
         usnm = data['usnm']
@@ -140,7 +140,7 @@ def login(request):
                 fname = db.getName(usnm)
                 final = zip(number, name, image)
                 context = {"data": final, "fname": fname}
-                response = render(request, "afterLog.html", context)
+                response = render(request, "afterLogcopy.html", context)
 
                 # cookies
                 response.set_cookie('login', '1')

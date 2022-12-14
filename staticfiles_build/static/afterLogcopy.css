@@ -92,7 +92,7 @@ body.dark {
 
 .main-top {
   margin-left: 10px;
-  margin-top: 30px;
+  margin-top: 25%;
 }
 
 ul a {
@@ -101,9 +101,8 @@ ul a {
   font-size: 14px;
   color: rgb(85, 83, 83);
   display: table;
-  padding: 10px;
+  padding: 20px;
   font-family: "Poppins";
-  margin: 20px 0px;
   display: flex;
   align-items: center;
   transition: 0.5s ease-in-out;
@@ -149,7 +148,7 @@ nav a:hover i {
   flex-direction: column;
   padding: 25px;
   color: #012970;
-  margin-top: 30px;
+ 
 }
 
 .users {
@@ -215,8 +214,8 @@ nav a:hover i {
 }
 /*course box */
 .main-course {
-  margin-top: 20px;
-  margin-bottom: 50px;
+  /* margin-top: 20px;
+  margin-bottom: 50px; */
   text-transform: capitalize;
   display: flex;
   flex-direction: column;

@@ -513,6 +513,13 @@ a.channel:hover {
   overflow: auto;
 }*/
 
+#vli-videos {
+  height: 400px;
+    overflow: auto;
+}
+#vli-videos::-webkit-scrollbar{ width:10px; }
+#vli-videos::-webkit-scrollbar-thumb{ background: grey; border-radius: 40px;}
+
 .video-con {
   display: flex;
   cursor: pointer;

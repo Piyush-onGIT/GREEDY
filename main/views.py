@@ -112,7 +112,7 @@ def login(request):
     try:
         if (cookie['login'] == '1'):
             context = getContext(cookie)
-            return render(request, "aferLog.html", context)
+            return render(request, "afterLog.html", context)
     except:
         data = request.POST
         usnm = data['usnm']

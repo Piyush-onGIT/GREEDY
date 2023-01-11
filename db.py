@@ -4,6 +4,7 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 import pytz
+import hashlib
 
 scope = ["https://spreadsheets.google.com/feeds", 'https://www.googleapis.com/auth/spreadsheets',
             "https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
@@ -167,3 +168,23 @@ def getQuiz():
     final = zip(name, link)
     # print(name)
     return final
+
+
+def change(mail, password):
+    wks = sheet.worksheet("users")
+    data = list(wks.get_all_values())
+    
+    n = len(data)
+    row = -1;
+    for i in range(0, n):
+        if data[i][2] == mail:
+            row = i;
+            break
+
+    if row == -1:
+        return -1;
+    else:
+        password = hashlib.md5(password.encode()).hexdigest()
+        wks.update_cell(row + 1, 4, password)
+        s = "0" + str(data[row][0])
+        return s

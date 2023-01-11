@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="{% static 'login.css' %}">
   <link rel="stylesheet" href="{% static 'loginstyle.css' %}">
-  <title>Log In</title>
+  <title>Forgot credentials</title>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
@@ -15,47 +15,29 @@
   {% if messages %} {% for msg in messages %}
   <script>
     var x = "{{msg}}"
-    console.log("{{msg}}");
-    if ("{{msg}}" == 5) {
+    if ("{{msg}}" == -1) {
       swal({
         "title": "Alert",
-        "text": "Wrong Password",
+        "text": "No such email exists",
         "icon": "warning",
         "button": "Go Back"
       }).then(() => {
         history.back();
       });
     }
-    else if ("{{msg}}" == 6) {
+    else {
       swal({
-        "title": "Alert",
-        "text": "No such account exists",
-        "icon": "warning",
+        "title": "Success",
+        "text": "Password changed, Note your useraname: {{msg}}",
+        "icon": "success",
         "button": "Go Back"
       }).then(() => {
         history.back();
       });
-    }
-    else if ("{{msg}}" == 8) {
-      swal({
-        "title": "Success",
-        "text": "Successfully Registered",
-        "icon": "success",
-        "button": "OK"
-      });
-    }
-    else if (x[0] === "0") {
-      x = x.slice(1)
-      console.log(x)
-      swal({
-        "title": "Success",
-        "text": "Password changed, Note your useraname: " + x,
-        "icon": "success",
-        "button": "Login Now"
-      })
     }
   </script>
   {% endfor %} {% endif %}
+
   <div class="main-container">
     <div class="left-section">
       <div class="left-section-logo1">
@@ -70,19 +52,19 @@
       </div>
     </div>
     <div class="middle-section">
-      <h1 data-heading="LOG IN">LOG IN</h1>
+      <h1 data-heading="LOG IN"></h1>
     </div>
     <div class="right-section">
-      <form action="welcome" class="form__content" method="POST">
+      <form action="change" class="form__content" method="POST">
         {% csrf_token %}
-        <h1 class="log-in">Log <span style="color:#F36527">In</span></h1>
+        <h1 class="log-in">Update <span style="color:#F36527">Credentials</span></h1>
         <div class="form__box">
-          <input required type="text" class="form__input" placeholder="YOUR USERNAME" name="usnm">
-          <label for="" class="form__label">YOUR USERNAME</label>
+          <input required type="email" class="form__input" placeholder="YOUR EMAIL" name="email">
+          <label for="" class="form__label">YOUR EMAIL</label>
           <div class="form__shadow"></div>
         </div>
         <div class="form__box">
-          <input required type="password" class="form__input" placeholder="Password" name="passd">
+          <input required type="password" class="form__input" placeholder="New Password" name="passd">
           <label for="" class="form__label">ENTER PASSWORD</label>
           <div class="form__shadow"></div>
         </div>
@@ -92,7 +74,7 @@
             <p>Forgot credentials? <a href="/update">Get it here!</a></p>
           </div>
           <div class="form__button">
-            <input type="Submit" class="form__submit" value="Log In">
+            <input type="Submit" class="form__submit" value="Submit">
           </div>
         </div>
       </form>

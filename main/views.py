@@ -255,3 +255,20 @@ def quiz(request):
     quiz = db.getQuiz()
     context = {"fname": cook['fname'], "data": quiz}
     return render(request, "quiz.html", context)
+
+def update(request):
+    return render(request, "update.html")
+
+def change(request):
+    data = request.POST
+    email = data['email']
+    passd = data['passd']
+    
+    get = db.change(email, passd)
+
+    if get == -1:
+        messages.info(request, get)
+        return render(request, "update.html")
+    else:
+        messages.info(request, get)
+        return render(request, "login.html")

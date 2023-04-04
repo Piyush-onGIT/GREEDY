@@ -10,6 +10,9 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from django.contrib import messages
 import hashlib
+from pymongo import MongoClient
+import json
+from rest_framework.decorators import api_view
 
 def getContext(cookie):
     names = cookie['names']
@@ -70,8 +73,9 @@ def checkSpace(name):
 
 def signup(request):
     d = request.POST
-    # print(d)
+    print(d)
     name = d['fname'] + " " + d["lname"]
+    print(name)
     usnm = d['usnm']
     mail = d['email']
     passd = d['passd']
@@ -272,3 +276,23 @@ def change(request):
     else:
         messages.info(request, get)
         return render(request, "login.html")
+
+
+
+# using mongoDB
+@api_view(['POST', 'GET'])
+def signup_mongo(request):
+    data = json.loads(request.body.decode("utf-8"))
+    print(data)
+    CONNECTION_STRING = "mongodb+srv://xorus:2510Pksh%3F%401901@cluster0.uhbf7nx.mongodb.net/?retryWrites=true"
+ 
+   # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
+    client = MongoClient(CONNECTION_STRING)
+ 
+   # Create the database for our example (we will use the same database throughout the tutorial
+    db = client['DBUGGER']
+    col = db["users"]
+    # data = dict(data)
+    # print(data)
+    col.insert_one(data);
+    return render(request, "signup.html")

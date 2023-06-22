@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'GREEDY.wsgi.application'
+WSGI_APPLICATION = 'GREEDY.wsgi.app'
 
 
 # Database

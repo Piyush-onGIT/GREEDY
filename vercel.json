@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "GREEDY/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "GREEDY/wsgi.py"
+      }
+    ]
+}

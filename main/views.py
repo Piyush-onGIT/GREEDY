@@ -128,7 +128,6 @@ def login(request):
             if check == hashed:
                 # logged in
                 # messages.info(request, 4)
-                
                 enrolled = db.getEnCourses(usnm)
                 name = []
                 image = []
